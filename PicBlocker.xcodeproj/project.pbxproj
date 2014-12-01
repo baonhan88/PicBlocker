@@ -1,0 +1,490 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		7B2861161A2CA5CD006E7719 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B2861151A2CA5CD006E7719 /* main.m */; };
+		7B2861191A2CA5CD006E7719 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B2861181A2CA5CD006E7719 /* AppDelegate.m */; };
+		7B28611C1A2CA5CD006E7719 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B28611B1A2CA5CD006E7719 /* ViewController.m */; };
+		7B28611F1A2CA5CD006E7719 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7B28611D1A2CA5CD006E7719 /* Main.storyboard */; };
+		7B2861211A2CA5CD006E7719 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7B2861201A2CA5CD006E7719 /* Images.xcassets */; };
+		7B2861241A2CA5CD006E7719 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7B2861221A2CA5CD006E7719 /* LaunchScreen.xib */; };
+		7B2861301A2CA5CD006E7719 /* PicBlockerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B28612F1A2CA5CD006E7719 /* PicBlockerTests.m */; };
+		7B28613F1A2CAF2A006E7719 /* SetupDigitCodeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B28613D1A2CAF2A006E7719 /* SetupDigitCodeViewController.m */; };
+		7B2861401A2CAF2A006E7719 /* SetupDigitCodeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7B28613E1A2CAF2A006E7719 /* SetupDigitCodeViewController.xib */; };
+		7B9805BB1A2CC0660075B6F6 /* Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B9805BA1A2CC0660075B6F6 /* Utils.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		7B28612A1A2CA5CD006E7719 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7B2861081A2CA5CD006E7719 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 7B28610F1A2CA5CD006E7719;
+			remoteInfo = PicBlocker;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		7B2861101A2CA5CD006E7719 /* PicBlocker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PicBlocker.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		7B2861141A2CA5CD006E7719 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7B2861151A2CA5CD006E7719 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		7B2861171A2CA5CD006E7719 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		7B2861181A2CA5CD006E7719 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		7B28611A1A2CA5CD006E7719 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		7B28611B1A2CA5CD006E7719 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		7B28611E1A2CA5CD006E7719 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		7B2861201A2CA5CD006E7719 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		7B2861231A2CA5CD006E7719 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		7B2861291A2CA5CD006E7719 /* PicBlockerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PicBlockerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		7B28612E1A2CA5CD006E7719 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7B28612F1A2CA5CD006E7719 /* PicBlockerTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PicBlockerTests.m; sourceTree = "<group>"; };
+		7B28613C1A2CAF2A006E7719 /* SetupDigitCodeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SetupDigitCodeViewController.h; sourceTree = "<group>"; };
+		7B28613D1A2CAF2A006E7719 /* SetupDigitCodeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SetupDigitCodeViewController.m; sourceTree = "<group>"; };
+		7B28613E1A2CAF2A006E7719 /* SetupDigitCodeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SetupDigitCodeViewController.xib; sourceTree = "<group>"; };
+		7B2861411A2CB61F006E7719 /* PicBlocker-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "PicBlocker-Prefix.pch"; sourceTree = "<group>"; };
+		7B9805B91A2CC0660075B6F6 /* Utils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Utils.h; sourceTree = "<group>"; };
+		7B9805BA1A2CC0660075B6F6 /* Utils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Utils.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		7B28610D1A2CA5CD006E7719 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7B2861261A2CA5CD006E7719 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		7B2861071A2CA5CD006E7719 = {
+			isa = PBXGroup;
+			children = (
+				7B2861121A2CA5CD006E7719 /* PicBlocker */,
+				7B28612C1A2CA5CD006E7719 /* PicBlockerTests */,
+				7B2861111A2CA5CD006E7719 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		7B2861111A2CA5CD006E7719 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				7B2861101A2CA5CD006E7719 /* PicBlocker.app */,
+				7B2861291A2CA5CD006E7719 /* PicBlockerTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		7B2861121A2CA5CD006E7719 /* PicBlocker */ = {
+			isa = PBXGroup;
+			children = (
+				7B9805B81A2CC0660075B6F6 /* Utils */,
+				7B28613A1A2CAE8D006E7719 /* Library */,
+				7B28613B1A2CAE8D006E7719 /* Resources */,
+				7B2861391A2CAE81006E7719 /* ViewController */,
+				7B2861171A2CA5CD006E7719 /* AppDelegate.h */,
+				7B2861181A2CA5CD006E7719 /* AppDelegate.m */,
+				7B28611A1A2CA5CD006E7719 /* ViewController.h */,
+				7B28611B1A2CA5CD006E7719 /* ViewController.m */,
+				7B28611D1A2CA5CD006E7719 /* Main.storyboard */,
+				7B2861201A2CA5CD006E7719 /* Images.xcassets */,
+				7B2861221A2CA5CD006E7719 /* LaunchScreen.xib */,
+				7B2861131A2CA5CD006E7719 /* Supporting Files */,
+			);
+			path = PicBlocker;
+			sourceTree = "<group>";
+		};
+		7B2861131A2CA5CD006E7719 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				7B2861141A2CA5CD006E7719 /* Info.plist */,
+				7B2861151A2CA5CD006E7719 /* main.m */,
+				7B2861411A2CB61F006E7719 /* PicBlocker-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		7B28612C1A2CA5CD006E7719 /* PicBlockerTests */ = {
+			isa = PBXGroup;
+			children = (
+				7B28612F1A2CA5CD006E7719 /* PicBlockerTests.m */,
+				7B28612D1A2CA5CD006E7719 /* Supporting Files */,
+			);
+			path = PicBlockerTests;
+			sourceTree = "<group>";
+		};
+		7B28612D1A2CA5CD006E7719 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				7B28612E1A2CA5CD006E7719 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		7B2861391A2CAE81006E7719 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				7B28613C1A2CAF2A006E7719 /* SetupDigitCodeViewController.h */,
+				7B28613D1A2CAF2A006E7719 /* SetupDigitCodeViewController.m */,
+				7B28613E1A2CAF2A006E7719 /* SetupDigitCodeViewController.xib */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		7B28613A1A2CAE8D006E7719 /* Library */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Library;
+			sourceTree = "<group>";
+		};
+		7B28613B1A2CAE8D006E7719 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		7B9805B81A2CC0660075B6F6 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				7B9805B91A2CC0660075B6F6 /* Utils.h */,
+				7B9805BA1A2CC0660075B6F6 /* Utils.m */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		7B28610F1A2CA5CD006E7719 /* PicBlocker */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7B2861331A2CA5CD006E7719 /* Build configuration list for PBXNativeTarget "PicBlocker" */;
+			buildPhases = (
+				7B28610C1A2CA5CD006E7719 /* Sources */,
+				7B28610D1A2CA5CD006E7719 /* Frameworks */,
+				7B28610E1A2CA5CD006E7719 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = PicBlocker;
+			productName = PicBlocker;
+			productReference = 7B2861101A2CA5CD006E7719 /* PicBlocker.app */;
+			productType = "com.apple.product-type.application";
+		};
+		7B2861281A2CA5CD006E7719 /* PicBlockerTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7B2861361A2CA5CD006E7719 /* Build configuration list for PBXNativeTarget "PicBlockerTests" */;
+			buildPhases = (
+				7B2861251A2CA5CD006E7719 /* Sources */,
+				7B2861261A2CA5CD006E7719 /* Frameworks */,
+				7B2861271A2CA5CD006E7719 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				7B28612B1A2CA5CD006E7719 /* PBXTargetDependency */,
+			);
+			name = PicBlockerTests;
+			productName = PicBlockerTests;
+			productReference = 7B2861291A2CA5CD006E7719 /* PicBlockerTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		7B2861081A2CA5CD006E7719 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0610;
+				ORGANIZATIONNAME = NhanB;
+				TargetAttributes = {
+					7B28610F1A2CA5CD006E7719 = {
+						CreatedOnToolsVersion = 6.1;
+						DevelopmentTeam = 6C99TY569A;
+					};
+					7B2861281A2CA5CD006E7719 = {
+						CreatedOnToolsVersion = 6.1;
+						TestTargetID = 7B28610F1A2CA5CD006E7719;
+					};
+				};
+			};
+			buildConfigurationList = 7B28610B1A2CA5CD006E7719 /* Build configuration list for PBXProject "PicBlocker" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 7B2861071A2CA5CD006E7719;
+			productRefGroup = 7B2861111A2CA5CD006E7719 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				7B28610F1A2CA5CD006E7719 /* PicBlocker */,
+				7B2861281A2CA5CD006E7719 /* PicBlockerTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		7B28610E1A2CA5CD006E7719 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7B28611F1A2CA5CD006E7719 /* Main.storyboard in Resources */,
+				7B2861241A2CA5CD006E7719 /* LaunchScreen.xib in Resources */,
+				7B2861401A2CAF2A006E7719 /* SetupDigitCodeViewController.xib in Resources */,
+				7B2861211A2CA5CD006E7719 /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7B2861271A2CA5CD006E7719 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		7B28610C1A2CA5CD006E7719 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7B28611C1A2CA5CD006E7719 /* ViewController.m in Sources */,
+				7B28613F1A2CAF2A006E7719 /* SetupDigitCodeViewController.m in Sources */,
+				7B2861191A2CA5CD006E7719 /* AppDelegate.m in Sources */,
+				7B9805BB1A2CC0660075B6F6 /* Utils.m in Sources */,
+				7B2861161A2CA5CD006E7719 /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7B2861251A2CA5CD006E7719 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7B2861301A2CA5CD006E7719 /* PicBlockerTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		7B28612B1A2CA5CD006E7719 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 7B28610F1A2CA5CD006E7719 /* PicBlocker */;
+			targetProxy = 7B28612A1A2CA5CD006E7719 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		7B28611D1A2CA5CD006E7719 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				7B28611E1A2CA5CD006E7719 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		7B2861221A2CA5CD006E7719 /* LaunchScreen.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				7B2861231A2CA5CD006E7719 /* Base */,
+			);
+			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		7B2861311A2CA5CD006E7719 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		7B2861321A2CA5CD006E7719 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		7B2861341A2CA5CD006E7719 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				GCC_PREFIX_HEADER = "PicBlocker/PicBlocker-Prefix.pch";
+				INFOPLIST_FILE = PicBlocker/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+			};
+			name = Debug;
+		};
+		7B2861351A2CA5CD006E7719 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				GCC_PREFIX_HEADER = "PicBlocker/PicBlocker-Prefix.pch";
+				INFOPLIST_FILE = PicBlocker/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+			};
+			name = Release;
+		};
+		7B2861371A2CA5CD006E7719 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = PicBlockerTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PicBlocker.app/PicBlocker";
+			};
+			name = Debug;
+		};
+		7B2861381A2CA5CD006E7719 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = PicBlockerTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PicBlocker.app/PicBlocker";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		7B28610B1A2CA5CD006E7719 /* Build configuration list for PBXProject "PicBlocker" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7B2861311A2CA5CD006E7719 /* Debug */,
+				7B2861321A2CA5CD006E7719 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		7B2861331A2CA5CD006E7719 /* Build configuration list for PBXNativeTarget "PicBlocker" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7B2861341A2CA5CD006E7719 /* Debug */,
+				7B2861351A2CA5CD006E7719 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		7B2861361A2CA5CD006E7719 /* Build configuration list for PBXNativeTarget "PicBlockerTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7B2861371A2CA5CD006E7719 /* Debug */,
+				7B2861381A2CA5CD006E7719 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 7B2861081A2CA5CD006E7719 /* Project object */;
+}
