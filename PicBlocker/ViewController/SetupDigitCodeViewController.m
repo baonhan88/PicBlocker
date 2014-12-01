@@ -10,6 +10,8 @@
 
 @interface SetupDigitCodeViewController ()
 
+@property (strong, nonatomic) IBOutlet UILabel *descriptionLabel;
+
 @property (strong, nonatomic) IBOutlet UITextField *digitCodeTextField;
 
 @property (strong, nonatomic) NSString *digitCodeString;
@@ -44,18 +46,29 @@
 #pragma mark - UITextFieldDelegate
 
 - (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string {
-    if (_digitCodeTextField.text.length >= 3) {
+    DLog(@"textField.text = %@", textField.text);
+    DLog(@"string = %@", string);
+    
+    NSString *digitString = [NSString stringWithFormat:@"%@%@", textField.text, string];
+    
+    if (digitString.length >= 4) {
         if (!_digitCodeString) {
-            _digitCodeString = _digitCodeTextField.text;
+            _digitCodeString = digitString;
             _digitCodeTextField.text = @"";
+            _descriptionLabel.text = @"Please re-enter or setup your four digit code";
         } else {
-            if ([_digitCodeTextField.text isEqualToString:_digitCodeString]) {
+            if ([digitString isEqualToString:_digitCodeString]) {
                 DLog(@"digit done");
                 // setup four digit code
                 
                 // next screen
             } else {
-                
+                UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Warning"
+                                                                    message:@"Digit code not matched, please try again"
+                                                                   delegate:self
+                                                          cancelButtonTitle:@"OK"
+                                                          otherButtonTitles:nil, nil];
+                [alertView show];
             }
             
         }
