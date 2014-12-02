@@ -65,6 +65,9 @@
                                 <rect key="frame" x="223" y="234" width="155" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" keyboardType="numbersAndPunctuation"/>
+                                <connections>
+                                    <action selector="digitCodeTextFieldEditingChanged:" destination="0zE-oc-HRE" eventType="editingChanged" id="geF-fX-Ozr"/>
+                                </connections>
                             </textField>
                         </subviews>
                         <color key="backgroundColor" red="0.16862745098039217" green="0.42352941176470588" blue="0.27843137254901962" alpha="1" colorSpace="calibratedRGB"/>
@@ -95,16 +98,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="domin@domin.com" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="NUV-Lc-TLk">
-                                <rect key="frame" x="150" y="177" width="300" height="30"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="PTw-r9-2nG"/>
-                                    <constraint firstAttribute="width" constant="300" id="zhG-en-1N6"/>
-                                </constraints>
-                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" keyboardType="emailAddress"/>
-                            </textField>
                             <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Whg-4J-2IA">
                                 <rect key="frame" x="150" y="220" width="300" height="30"/>
                                 <color key="backgroundColor" red="0.99607843137254903" green="0.77254901960784317" blue="0.12549019607843137" alpha="1" colorSpace="calibratedRGB"/>
@@ -117,6 +110,16 @@
                                     <action selector="goButtonClicked:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="MeN-1O-j1x"/>
                                 </connections>
                             </button>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="domin@domin.com" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="NUV-Lc-TLk">
+                                <rect key="frame" x="150" y="177" width="300" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="PTw-r9-2nG"/>
+                                    <constraint firstAttribute="width" constant="300" id="zhG-en-1N6"/>
+                                </constraints>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" keyboardType="emailAddress"/>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" red="0.16862745100000001" green="0.42352941179999998" blue="0.2784313725" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>

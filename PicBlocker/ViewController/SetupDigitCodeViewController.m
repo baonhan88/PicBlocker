@@ -45,30 +45,25 @@
     // Dispose of any resources that can be recreated.
 }
 
-#pragma mark - UITextFieldDelegate
+#pragma mark - Events
 
-- (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string {
-    DLog(@"textField.text = %@", textField.text);
-    DLog(@"string = %@", string);
-    
-    NSString *digitString = [NSString stringWithFormat:@"%@%@", textField.text, string];
-    
+- (IBAction)digitCodeTextFieldEditingChanged:(id)sender {
     // nhap du 4 ky tu -> bat dau check
-        // neu chua setup digit
-            // nhap lan 1 thi cho nhap lan 2 ky tu
-            // nguoc lai thi kiem tra 2 chuoi lan 1 va 2 co khop voi nhau ko
-                // neu khop thi save passcode -> next qua man hinh setup Q&A
-                // nguoc lai show alert error, reset digit nhap lai lan 2
-        // nguoc lai cho qua man hinh list Photo
+    // neu chua setup digit
+    // nhap lan 1 thi cho nhap lan 2 ky tu
+    // nguoc lai thi kiem tra 2 chuoi lan 1 va 2 co khop voi nhau ko
+    // neu khop thi save passcode -> next qua man hinh setup Q&A
+    // nguoc lai show alert error, reset digit nhap lai lan 2
+    // nguoc lai cho qua man hinh list Photo
     
-    if (digitString.length >= 4) {
+    if (_digitCodeTextField.text.length >= 4) {
         if (![Utils getPasscode]) {
             if (!_digitCodeString) {
-                _digitCodeString = digitString;
+                _digitCodeString = _digitCodeTextField.text;
                 _digitCodeTextField.text = @"";
                 _descriptionLabel.text = @"Please re-enter or setup your four digit code";
             } else {
-                if ([digitString isEqualToString:_digitCodeString]) {
+                if ([_digitCodeTextField.text isEqualToString:_digitCodeString]) {
                     DLog(@"digit done");
                     // setup four digit code
                     [Utils setPasscodeWithCode:_digitCodeString];
@@ -86,11 +81,19 @@
                 }
                 
             }
-
+            
         } else {
             // go to photo list screen
         }
         
+    }
+    
+}
+
+#pragma mark - UITextFieldDelegate
+
+- (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string {
+    if (textField.text.length >= 4) {
         return NO;
     }
     
