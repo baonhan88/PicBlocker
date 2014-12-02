@@ -8,6 +8,9 @@
 
 #import "Utils.h"
 
+#define kIsFirstLaunchApp   @"kIsFirstLaunchApp"
+#define kPasscode           @"kPasscode"
+
 @interface Utils()
 
 @end
@@ -19,6 +22,35 @@
     NSPredicate *emailTest = [NSPredicate predicateWithFormat:@"SELF MATCHES %@", emailRegex];
 	
     return [emailTest evaluateWithObject:email];
+}
+
+#pragma mark - User Defaults
+
++ (BOOL)isFirstTimeLaunchApp {
+    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+    if (![userDefaults objectForKey:kIsFirstLaunchApp]) {
+        [userDefaults setBool:YES forKey:kIsFirstLaunchApp];
+        [userDefaults synchronize];
+        
+        return YES;
+    }
+    
+    return NO;
+}
+
++ (NSString *)getPasscode {
+    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+    if ([userDefaults objectForKey:kPasscode]) {
+        return [userDefaults objectForKey:kPasscode];
+    }
+    
+    return nil;
+}
+
++ (void)setPasscodeWithCode:(NSString *)passcode {
+    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+    [userDefaults setObject:passcode forKey:kPasscode];
+    [userDefaults synchronize];
 }
 
 @end

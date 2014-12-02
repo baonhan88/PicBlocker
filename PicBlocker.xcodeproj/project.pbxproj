@@ -15,8 +15,12 @@
 		7B2861241A2CA5CD006E7719 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7B2861221A2CA5CD006E7719 /* LaunchScreen.xib */; };
 		7B2861301A2CA5CD006E7719 /* PicBlockerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B28612F1A2CA5CD006E7719 /* PicBlockerTests.m */; };
 		7B28613F1A2CAF2A006E7719 /* SetupDigitCodeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B28613D1A2CAF2A006E7719 /* SetupDigitCodeViewController.m */; };
-		7B2861401A2CAF2A006E7719 /* SetupDigitCodeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7B28613E1A2CAF2A006E7719 /* SetupDigitCodeViewController.xib */; };
 		7B9805BB1A2CC0660075B6F6 /* Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B9805BA1A2CC0660075B6F6 /* Utils.m */; };
+		F8DAE61B1A2D5814003151ED /* RegisterEmailView.m in Sources */ = {isa = PBXBuildFile; fileRef = F8DAE61A1A2D5814003151ED /* RegisterEmailView.m */; };
+		F8DAE61D1A2D5846003151ED /* RegisterEmailView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F8DAE61C1A2D5846003151ED /* RegisterEmailView.xib */; };
+		F8DAE6221A2D5967003151ED /* bg.png in Resources */ = {isa = PBXBuildFile; fileRef = F8DAE6201A2D5967003151ED /* bg.png */; };
+		F8DAE6231A2D5967003151ED /* bg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F8DAE6211A2D5967003151ED /* bg@2x.png */; };
+		F8DAE6261A2D62BB003151ED /* SetupEmailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F8DAE6251A2D62BB003151ED /* SetupEmailViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,10 +49,16 @@
 		7B28612F1A2CA5CD006E7719 /* PicBlockerTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PicBlockerTests.m; sourceTree = "<group>"; };
 		7B28613C1A2CAF2A006E7719 /* SetupDigitCodeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SetupDigitCodeViewController.h; sourceTree = "<group>"; };
 		7B28613D1A2CAF2A006E7719 /* SetupDigitCodeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SetupDigitCodeViewController.m; sourceTree = "<group>"; };
-		7B28613E1A2CAF2A006E7719 /* SetupDigitCodeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SetupDigitCodeViewController.xib; sourceTree = "<group>"; };
 		7B2861411A2CB61F006E7719 /* PicBlocker-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "PicBlocker-Prefix.pch"; sourceTree = "<group>"; };
 		7B9805B91A2CC0660075B6F6 /* Utils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Utils.h; sourceTree = "<group>"; };
 		7B9805BA1A2CC0660075B6F6 /* Utils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Utils.m; sourceTree = "<group>"; };
+		F8DAE6191A2D5814003151ED /* RegisterEmailView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegisterEmailView.h; sourceTree = "<group>"; };
+		F8DAE61A1A2D5814003151ED /* RegisterEmailView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegisterEmailView.m; sourceTree = "<group>"; };
+		F8DAE61C1A2D5846003151ED /* RegisterEmailView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RegisterEmailView.xib; sourceTree = "<group>"; };
+		F8DAE6201A2D5967003151ED /* bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bg.png; sourceTree = "<group>"; };
+		F8DAE6211A2D5967003151ED /* bg@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bg@2x.png"; sourceTree = "<group>"; };
+		F8DAE6241A2D62BB003151ED /* SetupEmailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SetupEmailViewController.h; sourceTree = "<group>"; };
+		F8DAE6251A2D62BB003151ED /* SetupEmailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SetupEmailViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,9 +100,10 @@
 		7B2861121A2CA5CD006E7719 /* PicBlocker */ = {
 			isa = PBXGroup;
 			children = (
+				F8DAE61E1A2D5967003151ED /* Resources */,
 				7B9805B81A2CC0660075B6F6 /* Utils */,
 				7B28613A1A2CAE8D006E7719 /* Library */,
-				7B28613B1A2CAE8D006E7719 /* Resources */,
+				F8DAE6181A2D5796003151ED /* View */,
 				7B2861391A2CAE81006E7719 /* ViewController */,
 				7B2861171A2CA5CD006E7719 /* AppDelegate.h */,
 				7B2861181A2CA5CD006E7719 /* AppDelegate.m */,
@@ -138,7 +149,8 @@
 			children = (
 				7B28613C1A2CAF2A006E7719 /* SetupDigitCodeViewController.h */,
 				7B28613D1A2CAF2A006E7719 /* SetupDigitCodeViewController.m */,
-				7B28613E1A2CAF2A006E7719 /* SetupDigitCodeViewController.xib */,
+				F8DAE6241A2D62BB003151ED /* SetupEmailViewController.h */,
+				F8DAE6251A2D62BB003151ED /* SetupEmailViewController.m */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -150,13 +162,6 @@
 			path = Library;
 			sourceTree = "<group>";
 		};
-		7B28613B1A2CAE8D006E7719 /* Resources */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Resources;
-			sourceTree = "<group>";
-		};
 		7B9805B81A2CC0660075B6F6 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
@@ -164,6 +169,33 @@
 				7B9805BA1A2CC0660075B6F6 /* Utils.m */,
 			);
 			path = Utils;
+			sourceTree = "<group>";
+		};
+		F8DAE6181A2D5796003151ED /* View */ = {
+			isa = PBXGroup;
+			children = (
+				F8DAE6191A2D5814003151ED /* RegisterEmailView.h */,
+				F8DAE61A1A2D5814003151ED /* RegisterEmailView.m */,
+				F8DAE61C1A2D5846003151ED /* RegisterEmailView.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		F8DAE61E1A2D5967003151ED /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				F8DAE61F1A2D5967003151ED /* Images */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		F8DAE61F1A2D5967003151ED /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				F8DAE6201A2D5967003151ED /* bg.png */,
+				F8DAE6211A2D5967003151ED /* bg@2x.png */,
+			);
+			path = Images;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -249,7 +281,9 @@
 			files = (
 				7B28611F1A2CA5CD006E7719 /* Main.storyboard in Resources */,
 				7B2861241A2CA5CD006E7719 /* LaunchScreen.xib in Resources */,
-				7B2861401A2CAF2A006E7719 /* SetupDigitCodeViewController.xib in Resources */,
+				F8DAE6221A2D5967003151ED /* bg.png in Resources */,
+				F8DAE6231A2D5967003151ED /* bg@2x.png in Resources */,
+				F8DAE61D1A2D5846003151ED /* RegisterEmailView.xib in Resources */,
 				7B2861211A2CA5CD006E7719 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -270,9 +304,11 @@
 			files = (
 				7B28611C1A2CA5CD006E7719 /* ViewController.m in Sources */,
 				7B28613F1A2CAF2A006E7719 /* SetupDigitCodeViewController.m in Sources */,
+				F8DAE61B1A2D5814003151ED /* RegisterEmailView.m in Sources */,
 				7B2861191A2CA5CD006E7719 /* AppDelegate.m in Sources */,
 				7B9805BB1A2CC0660075B6F6 /* Utils.m in Sources */,
 				7B2861161A2CA5CD006E7719 /* main.m in Sources */,
+				F8DAE6261A2D62BB003151ED /* SetupEmailViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

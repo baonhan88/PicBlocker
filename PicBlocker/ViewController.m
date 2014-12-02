@@ -7,11 +7,10 @@
 //
 
 #import "ViewController.h"
+#import "SetupEmailViewController.h"
 #import "SetupDigitCodeViewController.h"
 
 @interface ViewController ()
-
-@property (strong, nonatomic) IBOutlet UITextField *emailTextField;
 
 @end
 
@@ -20,6 +19,16 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
+    
+    if ([Utils isFirstTimeLaunchApp]) {
+        UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+        SetupEmailViewController *setupEmailVC = [storyboard instantiateViewControllerWithIdentifier:@"SetupEmailViewController"];
+        [self.navigationController pushViewController:setupEmailVC animated:NO];
+    } else {
+        UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+        SetupDigitCodeViewController *setupDigitVC = [storyboard instantiateViewControllerWithIdentifier:@"SetupDigitCodeViewController"];
+        [self.navigationController pushViewController:setupDigitVC animated:NO];
+    }
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -31,40 +40,11 @@
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
     
-    [_emailTextField becomeFirstResponder];
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
-}
-
-#pragma mark - Events
-
-- (IBAction)goButtonClicked:(id)sender {
-    NSString *errorMessageString = @"";
-    
-    if ([_emailTextField.text isEqualToString:@""]) {
-        errorMessageString = @"Please input email";
-    } else if (![Utils validateEmail:_emailTextField.text]) {
-        errorMessageString = @"Invalid email address";
-    }
-    
-    if (![errorMessageString isEqualToString:@""]) {
-        UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Warning"
-                                                            message:errorMessageString
-                                                           delegate:self
-                                                  cancelButtonTitle:@"OK"
-                                                  otherButtonTitles:nil, nil];
-        [alertView show];
-    } else {
-        // set up new email address
-        
-        // next screen
-        SetupDigitCodeViewController *setupDigitCodeVC = [[SetupDigitCodeViewController alloc] initWithNibName:@"SetupDigitCodeViewController" bundle:nil];
-        [self.navigationController pushViewController:setupDigitCodeVC animated:YES];
-        
-    }
 }
 
 

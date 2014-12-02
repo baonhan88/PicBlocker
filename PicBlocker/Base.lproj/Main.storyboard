@@ -14,7 +14,7 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
-                        <segue destination="vXZ-lx-hvc" kind="relationship" relationship="rootViewController" id="AKk-rD-rGF"/>
+                        <segue destination="2ON-00-FaD" kind="relationship" relationship="rootViewController" id="KV4-04-dNH"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="az1-jT-FEE" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -22,9 +22,71 @@
             <point key="canvasLocation" x="-1010" y="125"/>
         </scene>
         <!--View Controller-->
+        <scene sceneID="Zf8-Lx-65x">
+            <objects>
+                <viewController id="2ON-00-FaD" customClass="ViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="etx-Hd-byh"/>
+                        <viewControllerLayoutGuide type="bottom" id="1hh-0w-un4"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="KI3-pj-QbL">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="IUv-Si-hfo"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="EzT-CK-qc6" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1010" y="892"/>
+        </scene>
+        <!--Setup Digit Code View Controller-->
+        <scene sceneID="Ll0-Oi-mfB">
+            <objects>
+                <viewController storyboardIdentifier="SetupDigitCodeViewController" id="0zE-oc-HRE" customClass="SetupDigitCodeViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="KLr-bx-Vtf"/>
+                        <viewControllerLayoutGuide type="bottom" id="DDI-5Y-5uN"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="l32-MH-B1O">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Please enter or setup your four digit code" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZMU-Cs-Asg">
+                                <rect key="frame" x="165" y="162" width="270" height="46"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="270" id="unB-Nc-geS"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="QdI-Ms-vci">
+                                <rect key="frame" x="223" y="234" width="155" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numbersAndPunctuation"/>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" red="0.16862745098039217" green="0.42352941176470588" blue="0.27843137254901962" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="centerX" secondItem="QdI-Ms-vci" secondAttribute="centerX" id="0yb-De-3wp"/>
+                            <constraint firstAttribute="centerX" secondItem="ZMU-Cs-Asg" secondAttribute="centerX" id="8si-h2-tsZ"/>
+                            <constraint firstItem="QdI-Ms-vci" firstAttribute="top" secondItem="ZMU-Cs-Asg" secondAttribute="bottom" constant="8" id="TOH-DP-LCP"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="descriptionLabel" destination="ZMU-Cs-Asg" id="STO-XE-UZd"/>
+                        <outlet property="digitCodeTextField" destination="QdI-Ms-vci" id="4di-j7-Vi3"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7q4-s3-1xv" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-503" y="-557"/>
+        </scene>
+        <!--Setup Email View Controller-->
         <scene sceneID="ufC-wZ-h7g">
             <objects>
-                <viewController id="vXZ-lx-hvc" customClass="ViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SetupEmailViewController" id="vXZ-lx-hvc" customClass="SetupEmailViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="jyV-Pf-zRb"/>
                         <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
@@ -33,31 +95,33 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Whg-4J-2IA">
-                                <rect key="frame" x="285" y="285" width="30" height="30"/>
-                                <state key="normal" title="GO">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="domin@domin.com" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="NUV-Lc-TLk">
+                                <rect key="frame" x="150" y="177" width="300" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="PTw-r9-2nG"/>
+                                    <constraint firstAttribute="width" constant="300" id="zhG-en-1N6"/>
+                                </constraints>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" keyboardType="emailAddress"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Whg-4J-2IA">
+                                <rect key="frame" x="150" y="220" width="300" height="30"/>
+                                <color key="backgroundColor" red="0.99607843137254903" green="0.77254901960784317" blue="0.12549019607843137" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                                <state key="normal" title="Go">
+                                    <color key="titleColor" red="0.16078431372549018" green="0.25098039215686274" blue="0.71372549019607845" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
                                     <action selector="goButtonClicked:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="MeN-1O-j1x"/>
                                 </connections>
                             </button>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="domin@domin.com" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="NUV-Lc-TLk">
-                                <rect key="frame" x="180" y="230" width="241" height="30"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="PTw-r9-2nG"/>
-                                    <constraint firstAttribute="width" constant="241" id="zhG-en-1N6"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" keyboardType="emailAddress"/>
-                            </textField>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.16862745100000001" green="0.42352941179999998" blue="0.2784313725" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstAttribute="centerX" secondItem="NUV-Lc-TLk" secondAttribute="centerX" id="CGq-bB-eyL"/>
-                            <constraint firstItem="Whg-4J-2IA" firstAttribute="top" secondItem="NUV-Lc-TLk" secondAttribute="bottom" constant="25" id="cCf-Q1-2Tr"/>
-                            <constraint firstAttribute="centerX" secondItem="Whg-4J-2IA" secondAttribute="centerX" id="nLO-YR-FAY"/>
-                            <constraint firstAttribute="centerY" secondItem="NUV-Lc-TLk" secondAttribute="centerY" id="zcf-1C-bKt"/>
+                            <constraint firstAttribute="centerX" secondItem="Whg-4J-2IA" secondAttribute="centerX" id="HS2-Id-Sk0"/>
+                            <constraint firstAttribute="centerX" secondItem="NUV-Lc-TLk" secondAttribute="centerX" id="Rb9-sI-HGh"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="AQw-df-VAh"/>

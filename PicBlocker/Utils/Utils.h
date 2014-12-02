@@ -12,4 +12,8 @@
 
 + (BOOL)validateEmail:(NSString *)email;
 
++ (BOOL)isFirstTimeLaunchApp;
++ (NSString *)getPasscode;
++ (void)setPasscodeWithCode:(NSString *)passcode;
+
 @end

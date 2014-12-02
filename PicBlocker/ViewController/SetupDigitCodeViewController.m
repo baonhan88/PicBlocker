@@ -24,6 +24,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+    
+    _digitCodeTextField.delegate = self;
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -51,26 +53,42 @@
     
     NSString *digitString = [NSString stringWithFormat:@"%@%@", textField.text, string];
     
+    // nhap du 4 ky tu -> bat dau check
+        // neu chua setup digit
+            // nhap lan 1 thi cho nhap lan 2 ky tu
+            // nguoc lai thi kiem tra 2 chuoi lan 1 va 2 co khop voi nhau ko
+                // neu khop thi save passcode -> next qua man hinh setup Q&A
+                // nguoc lai show alert error, reset digit nhap lai lan 2
+        // nguoc lai cho qua man hinh list Photo
+    
     if (digitString.length >= 4) {
-        if (!_digitCodeString) {
-            _digitCodeString = digitString;
-            _digitCodeTextField.text = @"";
-            _descriptionLabel.text = @"Please re-enter or setup your four digit code";
-        } else {
-            if ([digitString isEqualToString:_digitCodeString]) {
-                DLog(@"digit done");
-                // setup four digit code
-                
-                // next screen
+        if (![Utils getPasscode]) {
+            if (!_digitCodeString) {
+                _digitCodeString = digitString;
+                _digitCodeTextField.text = @"";
+                _descriptionLabel.text = @"Please re-enter or setup your four digit code";
             } else {
-                UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Warning"
-                                                                    message:@"Digit code not matched, please try again"
-                                                                   delegate:self
-                                                          cancelButtonTitle:@"OK"
-                                                          otherButtonTitles:nil, nil];
-                [alertView show];
+                if ([digitString isEqualToString:_digitCodeString]) {
+                    DLog(@"digit done");
+                    // setup four digit code
+                    [Utils setPasscodeWithCode:_digitCodeString];
+                    
+                    // next screen
+                } else {
+                    UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Warning"
+                                                                        message:@"Digit code not matched, please try again"
+                                                                       delegate:self
+                                                              cancelButtonTitle:@"OK"
+                                                              otherButtonTitles:nil, nil];
+                    [alertView show];
+                    
+                    _digitCodeTextField.text = @"";
+                }
+                
             }
-            
+
+        } else {
+            // go to photo list screen
         }
         
         return NO;
