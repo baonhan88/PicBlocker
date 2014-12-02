@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6250" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PhotoDetailViewController">
+            <connections>
+                <outlet property="importSettingView" destination="VPW-9i-xWl" id="5JR-UO-yTU"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Qnf-Xe-LKL">
+                    <rect key="frame" x="0.0" y="556" width="600" height="44"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="top" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Lf-p6-n9a">
+                            <rect key="frame" x="52" y="0.0" width="49" height="44"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                            <color key="tintColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            <inset key="titleEdgeInsets" minX="-20" minY="28" maxX="0.0" maxY="11"/>
+                            <inset key="imageEdgeInsets" minX="8" minY="5" maxX="0.0" maxY="2"/>
+                            <state key="normal" title="SHARE" image="share_icon.png">
+                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <state key="selected" image="Share_selected_icon.png"/>
+                            <state key="highlighted" image="Share_selected_icon.png"/>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" red="0.16862745100000001" green="0.42352941179999998" blue="0.2784313725" alpha="1" colorSpace="calibratedRGB"/>
+                </view>
+                <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="VPW-9i-xWl">
+                    <rect key="frame" x="492" y="8" width="100" height="71"/>
+                    <subviews>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="setting_PopUp.png" translatesAutoresizingMaskIntoConstraints="NO" id="JYc-Bm-ay1">
+                            <rect key="frame" x="0.0" y="0.0" width="100" height="71"/>
+                        </imageView>
+                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uPI-9X-6Lo">
+                            <rect key="frame" x="8" y="14" width="84" height="24"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                            <state key="normal" title="Import">
+                                <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kkd-aB-Stm">
+                            <rect key="frame" x="8" y="42" width="84" height="24"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                            <state key="normal" title="Settings">
+                                <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                </view>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="VPW-9i-xWl" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="72" id="HsP-au-t1w"/>
+                <constraint firstItem="Qnf-Xe-LKL" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="Mhu-ht-ell"/>
+                <constraint firstAttribute="bottom" secondItem="Qnf-Xe-LKL" secondAttribute="bottom" id="VoH-hr-pGh"/>
+                <constraint firstAttribute="trailing" secondItem="VPW-9i-xWl" secondAttribute="trailing" constant="8" id="g8s-eY-6vh"/>
+                <constraint firstAttribute="trailing" secondItem="Qnf-Xe-LKL" secondAttribute="trailing" id="kcK-1h-ntZ"/>
+            </constraints>
+        </view>
+    </objects>
+    <resources>
+        <image name="Share_selected_icon.png" width="19" height="22"/>
+        <image name="setting_PopUp.png" width="100" height="71"/>
+        <image name="share_icon.png" width="19" height="22"/>
+    </resources>
+</document>

@@ -9,6 +9,8 @@
 #import "ViewController.h"
 #import "SetupEmailViewController.h"
 #import "SetupDigitCodeViewController.h"
+#import "SecurityQuestionViewController.h"
+#import "PhotoManagementViewController.h"
 
 @interface ViewController ()
 
@@ -19,6 +21,9 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
+    
+//    PhotoManagementViewController *vc = [[PhotoManagementViewController alloc] initWithNibName:@"PhotoManagementViewController" bundle:nil];
+//    [self.navigationController pushViewController:vc animated:NO];
     
     if ([Utils isFirstTimeLaunchApp]) {
         UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];

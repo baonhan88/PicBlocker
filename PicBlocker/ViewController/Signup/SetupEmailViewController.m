@@ -25,8 +25,8 @@
     _emailTextField.leftView = spaceView;
     _emailTextField.leftViewMode = UITextFieldViewModeAlways;
     
-    _emailTextField.layer.borderColor = [UIColor whiteColor].CGColor;
-    _emailTextField.layer.borderWidth = 1;
+//    _emailTextField.layer.borderColor = [UIColor whiteColor].CGColor;
+//    _emailTextField.layer.borderWidth = 1;
 }
 
 - (void)viewWillAppear:(BOOL)animated {

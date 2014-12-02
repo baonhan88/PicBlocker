@@ -7,6 +7,8 @@
 //
 
 #import "SetupDigitCodeViewController.h"
+#import "SecurityQuestionViewController.h"
+#import "PhotoManagementViewController.h"
 
 @interface SetupDigitCodeViewController ()
 
@@ -68,7 +70,9 @@
                     // setup four digit code
                     [Utils setPasscodeWithCode:_digitCodeString];
                     
-                    // next screen
+                    // go to security question screen
+                    SecurityQuestionViewController *securityQuestionVC = [[SecurityQuestionViewController alloc] initWithNibName:@"SecurityQuestionViewController" bundle:nil];
+                    [self.navigationController pushViewController:securityQuestionVC animated:YES];
                 } else {
                     UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Warning"
                                                                         message:@"Digit code not matched, please try again"
@@ -84,6 +88,8 @@
             
         } else {
             // go to photo list screen
+            PhotoManagementViewController *photoManagementVC = [[PhotoManagementViewController alloc] initWithNibName:@"PhotoManagementViewController" bundle:nil];
+            [self.navigationController pushViewController:photoManagementVC animated:YES];
         }
         
     }

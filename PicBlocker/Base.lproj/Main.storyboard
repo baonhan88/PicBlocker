@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--Navigation Controller-->
@@ -62,19 +63,38 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="QdI-Ms-vci">
-                                <rect key="frame" x="223" y="234" width="155" height="30"/>
+                                <rect key="frame" x="223" y="225" width="155" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" keyboardType="numbersAndPunctuation"/>
                                 <connections>
                                     <action selector="digitCodeTextFieldEditingChanged:" destination="0zE-oc-HRE" eventType="editingChanged" id="geF-fX-Ozr"/>
                                 </connections>
                             </textField>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" image="screen_icon.png" translatesAutoresizingMaskIntoConstraints="NO" id="OBP-6z-7pS">
+                                <rect key="frame" x="238" y="13" width="125" height="141"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Y3C-7k-YE3">
+                                <rect key="frame" x="257" y="263" width="87" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <state key="normal" title="Forgot Code">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                            <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xUF-4d-E13">
+                                <rect key="frame" x="265" y="287" width="70" height="1"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" red="0.16862745098039217" green="0.42352941176470588" blue="0.27843137254901962" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstAttribute="centerX" secondItem="QdI-Ms-vci" secondAttribute="centerX" id="0yb-De-3wp"/>
+                            <constraint firstAttribute="centerX" secondItem="Y3C-7k-YE3" secondAttribute="centerX" id="57K-ny-Hqm"/>
                             <constraint firstAttribute="centerX" secondItem="ZMU-Cs-Asg" secondAttribute="centerX" id="8si-h2-tsZ"/>
                             <constraint firstItem="QdI-Ms-vci" firstAttribute="top" secondItem="ZMU-Cs-Asg" secondAttribute="bottom" constant="8" id="TOH-DP-LCP"/>
+                            <constraint firstAttribute="centerX" secondItem="OBP-6z-7pS" secondAttribute="centerX" id="baf-0R-rKs"/>
+                            <constraint firstAttribute="centerX" secondItem="xUF-4d-E13" secondAttribute="centerX" id="gh9-E4-ehk"/>
+                            <constraint firstItem="ZMU-Cs-Asg" firstAttribute="top" secondItem="OBP-6z-7pS" secondAttribute="bottom" constant="8" id="qan-DP-kWP"/>
+                            <constraint firstItem="Y3C-7k-YE3" firstAttribute="top" secondItem="QdI-Ms-vci" secondAttribute="bottom" constant="8" id="wu7-4b-dah"/>
                         </constraints>
                     </view>
                     <connections>
@@ -98,11 +118,15 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Whg-4J-2IA">
-                                <rect key="frame" x="150" y="220" width="300" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Whg-4J-2IA">
+                                <rect key="frame" x="155" y="236" width="291" height="43"/>
                                 <color key="backgroundColor" red="0.99607843137254903" green="0.77254901960784317" blue="0.12549019607843137" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="291" id="3kE-sN-gQS"/>
+                                    <constraint firstAttribute="height" constant="43" id="z5n-cI-8ay"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
-                                <state key="normal" title="Go">
+                                <state key="normal" title="Go" backgroundImage="go_button.png">
                                     <color key="titleColor" red="0.16078431372549018" green="0.25098039215686274" blue="0.71372549019607845" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -110,21 +134,40 @@
                                     <action selector="goButtonClicked:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="MeN-1O-j1x"/>
                                 </connections>
                             </button>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="domin@domin.com" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="NUV-Lc-TLk">
-                                <rect key="frame" x="150" y="177" width="300" height="30"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="screen_icon.png" translatesAutoresizingMaskIntoConstraints="NO" id="TPu-DV-neD">
+                                <rect key="frame" x="238" y="18" width="125" height="141"/>
+                            </imageView>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Enter Email" minimumFontSize="17" background="email_box.png" translatesAutoresizingMaskIntoConstraints="NO" id="NUV-Lc-TLk">
+                                <rect key="frame" x="155" y="176" width="291" height="43"/>
                                 <constraints>
+                                    <constraint firstAttribute="width" constant="291" id="PSS-2P-73k"/>
                                     <constraint firstAttribute="height" constant="30" id="PTw-r9-2nG"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="291" id="gQB-8U-QNd"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="43" id="gT7-z0-n2l"/>
+                                    <constraint firstAttribute="height" constant="43" id="s72-Ol-7ld"/>
                                     <constraint firstAttribute="width" constant="300" id="zhG-en-1N6"/>
                                 </constraints>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" keyboardType="emailAddress"/>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="PTw-r9-2nG"/>
+                                        <exclude reference="gQB-8U-QNd"/>
+                                        <exclude reference="gT7-z0-n2l"/>
+                                        <exclude reference="zhG-en-1N6"/>
+                                    </mask>
+                                </variation>
                             </textField>
                         </subviews>
                         <color key="backgroundColor" red="0.16862745100000001" green="0.42352941179999998" blue="0.2784313725" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
+                            <constraint firstItem="Whg-4J-2IA" firstAttribute="top" secondItem="NUV-Lc-TLk" secondAttribute="bottom" constant="17" id="3oS-cv-Fba"/>
                             <constraint firstAttribute="centerX" secondItem="Whg-4J-2IA" secondAttribute="centerX" id="HS2-Id-Sk0"/>
+                            <constraint firstAttribute="centerX" secondItem="TPu-DV-neD" secondAttribute="centerX" id="Hdb-gA-V4c"/>
+                            <constraint firstItem="NUV-Lc-TLk" firstAttribute="top" secondItem="TPu-DV-neD" secondAttribute="bottom" constant="17" id="Kqs-6w-EWn"/>
                             <constraint firstAttribute="centerX" secondItem="NUV-Lc-TLk" secondAttribute="centerX" id="Rb9-sI-HGh"/>
+                            <constraint firstItem="TPu-DV-neD" firstAttribute="top" secondItem="kh9-bI-dsS" secondAttribute="topMargin" constant="25" id="tYW-Lz-XPB"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="AQw-df-VAh"/>
@@ -137,4 +180,9 @@
             <point key="canvasLocation" x="-178" y="130"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="email_box.png" width="291" height="43"/>
+        <image name="go_button.png" width="291" height="43"/>
+        <image name="screen_icon.png" width="125" height="141"/>
+    </resources>
 </document>
