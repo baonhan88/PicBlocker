@@ -46,8 +46,8 @@
     self.navigationItem.rightBarButtonItems = [NSArray arrayWithObjects:importSettingButton, cameraButton, nil];
     
     // init photo list
-//    UIImage *image = [UIImage imageNamed:@"Lock_Unlock_Pop_Up_delet_icon"];
-//    [self saveImage:image];
+    UIImage *image = [UIImage imageNamed:@"Lock_Unlock_Pop_Up_delet_icon"];
+    [self saveImage:image];
     
     _photoList = [[NSMutableArray alloc] init];
     [self loadFileFromDocumentFolder:@""];
