@@ -56,6 +56,7 @@
 		7B9E837D1A2E03D9003AA48D /* PhotoCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7B9E837B1A2E03D9003AA48D /* PhotoCollectionViewCell.xib */; };
 		7B9E83811A2E1D80003AA48D /* PhotoDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B9E837F1A2E1D80003AA48D /* PhotoDetailViewController.m */; };
 		7B9E83821A2E1D80003AA48D /* PhotoDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7B9E83801A2E1D80003AA48D /* PhotoDetailViewController.xib */; };
+		7BB207BF1A2F49B20076EB41 /* PhotoEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BB207BE1A2F49B20076EB41 /* PhotoEntity.m */; };
 		F8D17D641A2F188A001DA980 /* NSAlert+MKNetworkKitAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = F8D17D4F1A2F188A001DA980 /* NSAlert+MKNetworkKitAdditions.m */; };
 		F8D17D651A2F188A001DA980 /* NSData+MKBase64.m in Sources */ = {isa = PBXBuildFile; fileRef = F8D17D511A2F188A001DA980 /* NSData+MKBase64.m */; };
 		F8D17D661A2F188A001DA980 /* NSDate+RFC1123.m in Sources */ = {isa = PBXBuildFile; fileRef = F8D17D531A2F188A001DA980 /* NSDate+RFC1123.m */; };
@@ -145,6 +146,8 @@
 		7B9E837E1A2E1D80003AA48D /* PhotoDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhotoDetailViewController.h; sourceTree = "<group>"; };
 		7B9E837F1A2E1D80003AA48D /* PhotoDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhotoDetailViewController.m; sourceTree = "<group>"; };
 		7B9E83801A2E1D80003AA48D /* PhotoDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PhotoDetailViewController.xib; sourceTree = "<group>"; };
+		7BB207BD1A2F49B20076EB41 /* PhotoEntity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhotoEntity.h; sourceTree = "<group>"; };
+		7BB207BE1A2F49B20076EB41 /* PhotoEntity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhotoEntity.m; sourceTree = "<group>"; };
 		F8D17D4E1A2F188A001DA980 /* NSAlert+MKNetworkKitAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSAlert+MKNetworkKitAdditions.h"; sourceTree = "<group>"; };
 		F8D17D4F1A2F188A001DA980 /* NSAlert+MKNetworkKitAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSAlert+MKNetworkKitAdditions.m"; sourceTree = "<group>"; };
 		F8D17D501A2F188A001DA980 /* NSData+MKBase64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+MKBase64.h"; sourceTree = "<group>"; };
@@ -212,6 +215,7 @@
 		7B2861121A2CA5CD006E7719 /* PicBlocker */ = {
 			isa = PBXGroup;
 			children = (
+				7BB207BC1A2F499E0076EB41 /* Entity */,
 				F8D17D6E1A2F19EB001DA980 /* Backend */,
 				F8D17CF51A2F1740001DA980 /* Library */,
 				F8DAE61E1A2D5967003151ED /* Resources */,
@@ -421,6 +425,15 @@
 				7B9E836E1A2DF1AC003AA48D /* SetupEmailViewController.m */,
 			);
 			path = Signup;
+			sourceTree = "<group>";
+		};
+		7BB207BC1A2F499E0076EB41 /* Entity */ = {
+			isa = PBXGroup;
+			children = (
+				7BB207BD1A2F49B20076EB41 /* PhotoEntity.h */,
+				7BB207BE1A2F49B20076EB41 /* PhotoEntity.m */,
+			);
+			path = Entity;
 			sourceTree = "<group>";
 		};
 		F8D17CF51A2F1740001DA980 /* Library */ = {
@@ -645,6 +658,7 @@
 				F8D17D641A2F188A001DA980 /* NSAlert+MKNetworkKitAdditions.m in Sources */,
 				F8DAE61B1A2D5814003151ED /* RegisterEmailView.m in Sources */,
 				7B9E837C1A2E03D9003AA48D /* PhotoCollectionViewCell.m in Sources */,
+				7BB207BF1A2F49B20076EB41 /* PhotoEntity.m in Sources */,
 				F8D17D6C1A2F188A001DA980 /* MKNetworkOperation.m in Sources */,
 				7B9E836F1A2DF1AC003AA48D /* SecurityQuestionViewController.m in Sources */,
 				7B9E83711A2DF1AC003AA48D /* SetupDigitCodeViewController.m in Sources */,
@@ -789,7 +803,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "91d56f22-1a1c-46fa-b226-5f1d3e40f868";
 			};
 			name = Debug;
 		};
@@ -797,14 +811,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PREFIX_HEADER = "PicBlocker/PicBlocker-Prefix.pch";
 				INFOPLIST_FILE = PicBlocker/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "91d56f22-1a1c-46fa-b226-5f1d3e40f868";
 			};
 			name = Release;
 		};

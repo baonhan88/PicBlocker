@@ -15,5 +15,6 @@
 + (BOOL)isFirstTimeLaunchApp;
 + (NSString *)getPasscode;
 + (void)setPasscodeWithCode:(NSString *)passcode;
++ (NSString *)nameForImage;
 
 @end

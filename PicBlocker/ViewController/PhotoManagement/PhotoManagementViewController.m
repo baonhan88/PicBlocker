@@ -9,6 +9,7 @@
 #import "PhotoManagementViewController.h"
 #import "PhotoCollectionViewCell.h"
 #import "PhotoDetailViewController.h"
+#import "PhotoEntity.h"
 
 #define kNumberColumn       4
 
@@ -45,11 +46,12 @@
     self.navigationItem.rightBarButtonItems = [NSArray arrayWithObjects:importSettingButton, cameraButton, nil];
     
     // init photo list
+//    UIImage *image = [UIImage imageNamed:@"Lock_Unlock_Pop_Up_delet_icon"];
+//    [self saveImage:image];
+    
     _photoList = [[NSMutableArray alloc] init];
-    for (int i=0; i<50; i++) {
-        NSString *imageName = @"screen_icon";
-        [_photoList addObject:imageName];
-    }
+    [self loadFileFromDocumentFolder:@""];
+
     
     // register photo cell
     UINib *cellNib = [UINib nibWithNibName:@"PhotoCollectionViewCell" bundle:nil];
@@ -66,6 +68,38 @@
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+#pragma mark - Common Methods
+
+- (void)saveImage:(UIImage *)image {
+    // save image to document directory
+    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory,NSUserDomainMask, YES);
+    NSString *docs = [paths objectAtIndex:0];
+    NSString* path =  [docs stringByAppendingFormat:[NSString stringWithFormat:@"/%@.jpg", [Utils nameForImage]]];
+    
+    NSData* imageData = [NSData dataWithData:UIImageJPEGRepresentation(image, .8)];
+    NSError *writeError = nil;
+    
+    if(![imageData writeToFile:path options:NSDataWritingAtomic error:&writeError]) {
+        DLog(@"%@: Error saving image: %@", [self class], [writeError localizedDescription]);
+    }
+    
+    // save metadata to userdefaults/SQLite DB
+}
+
+- (void)loadFileFromDocumentFolder:(NSString *) filename {
+    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory,    NSUserDomainMask, YES);
+    NSString *documentsDirectory = [paths objectAtIndex:0];
+    NSArray* dirs = [[NSFileManager defaultManager] contentsOfDirectoryAtPath:documentsDirectory
+                                                                        error:NULL];
+    for (NSString *imageName in dirs) {
+        NSString *outputPath = [documentsDirectory stringByAppendingPathComponent:imageName];
+        PhotoEntity *entity = [[PhotoEntity alloc] init];
+        entity.path = outputPath;
+        [_photoList addObject:entity];
+    }
+//    DLog(@"_photoList = %@", [_photoList description]);
 }
 
 #pragma mark - UICollectionViewDataSource & UICollectionViewDelegate
@@ -88,6 +122,9 @@
     PhotoCollectionViewCell *photoCell = [collectionView dequeueReusableCellWithReuseIdentifier:@"PhotoCollectionViewCell"
                                               forIndexPath:indexPath];
     
+    PhotoEntity *entity = [_photoList objectAtIndex:indexPath.row];
+    photoCell.imageView.image = [UIImage imageWithContentsOfFile:entity.path];
+    
     
     return photoCell;
 }
@@ -101,6 +138,10 @@
 
 - (void)cameraButtonClicked:(id)sender {
     DLog(@"cameraButtonClicked");
+//    UIImagePickerController * imagePicker = [[UIImagePickerController alloc] init];
+//    imagePicker.sourceType = UIImagePickerControllerSourceTypeCamera;
+//    imagePicker.delegate = self;
+//    [self presentViewController:imagePicker animated:YES completion:nil];
 }
 
 - (void)importSettingButtonClicked:(id)sender {
@@ -109,12 +150,37 @@
 }
 
 - (IBAction)importButtonClicked:(id)sender {
+    _importSettingView.hidden = YES;
+    
     DLog(@"importButtonClicked");
+    UIImagePickerController * imagePicker = [[UIImagePickerController alloc] init];
+    imagePicker.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
+    imagePicker.delegate = self;
+    [self presentViewController:imagePicker animated:YES completion:nil];
+
 }
 
 - (IBAction)settingButtonClicked:(id)sender {
     DLog(@"settingButtonClicked");
+    _importSettingView.hidden = YES;
 }
 
+#pragma mark - UIImagePickerControllerDelegate
+
+- (void)imagePickerControllerDidCancel:(UIImagePickerController *)picker {
+    [picker dismissViewControllerAnimated:YES completion:nil];
+}
+
+- (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info {
+    UIImage *image = [info objectForKey:UIImagePickerControllerOriginalImage];
+    [self saveImage:image];
+    
+    // khong co tac dung
+    [_photoCollectionView reloadData];
+
+    // You have the image. You can use this to present the image in the next view like you require in `#3`.
+    
+    [picker dismissViewControllerAnimated:YES completion:nil];
+}
 
 @end

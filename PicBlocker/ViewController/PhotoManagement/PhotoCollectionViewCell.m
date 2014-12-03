@@ -10,6 +10,8 @@
 
 @implementation PhotoCollectionViewCell
 
+@synthesize imageView;
+
 - (void)awakeFromNib {
     // Initialization code
 }

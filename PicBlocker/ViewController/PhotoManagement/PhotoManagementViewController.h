@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface PhotoManagementViewController : UIViewController <UICollectionViewDataSource, UICollectionViewDelegate>
+@interface PhotoManagementViewController : UIViewController <UICollectionViewDataSource, UICollectionViewDelegate, UIPickerViewDelegate>
 
 @end

@@ -45,7 +45,7 @@
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
     
-//    [_digitCodeTextField becomeFirstResponder];
+    [_digitCodeTextField becomeFirstResponder];
 }
 
 - (void)didReceiveMemoryWarning {
