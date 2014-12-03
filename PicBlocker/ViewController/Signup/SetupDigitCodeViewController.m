@@ -10,11 +10,14 @@
 #import "SecurityQuestionViewController.h"
 #import "PhotoManagementViewController.h"
 
+#define kBackspaceButtonTag             20
+
 @interface SetupDigitCodeViewController ()
 
 @property (strong, nonatomic) IBOutlet UILabel *descriptionLabel;
 
 @property (strong, nonatomic) IBOutlet UITextField *digitCodeTextField;
+
 
 @property (strong, nonatomic) NSString *digitCodeString;
 
@@ -28,6 +31,9 @@
     // Do any additional setup after loading the view from its nib.
     
     _digitCodeTextField.delegate = self;
+    
+    // init the number keyboard
+    [self initKeyboard];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -39,7 +45,7 @@
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
     
-    [_digitCodeTextField becomeFirstResponder];
+//    [_digitCodeTextField becomeFirstResponder];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -47,7 +53,61 @@
     // Dispose of any resources that can be recreated.
 }
 
+#pragma mark - Common Methods
+
+- (void)initKeyboard {
+    CGSize size = [[UIScreen mainScreen] bounds].size;
+    
+    int widthOfButton = size.width/3;
+    int heightOfButton = 45;
+    float yStart = size.height - heightOfButton*4;
+    int count = 0;
+    
+    for (int i=0; i<4; i++) {
+        for (int j=0; j<3; j++) {
+            count++;
+            
+            UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
+            button.frame = CGRectMake(j*widthOfButton, yStart + i*heightOfButton, widthOfButton, heightOfButton);
+            [button addTarget:self action:@selector(numberButtonClicked:) forControlEvents:UIControlEventTouchUpInside];
+            button.titleLabel.font = [UIFont systemFontOfSize:30];
+            
+            if (i == 3) {
+                if (j == 0) {
+                    // add non-button
+                    [button setTitle:@"" forState:UIControlStateNormal];
+                    button.userInteractionEnabled = NO;
+                } else if (j == 1) {
+                    [button setTitle:@"0" forState:UIControlStateNormal];
+                    button.tag = 0;
+                } else {
+                    // add backspace button
+                    [button setImage:[UIImage imageNamed:@"back_space_icon"] forState:UIControlStateNormal];
+                    button.tag = kBackspaceButtonTag;
+                }
+            } else {
+                [button setTitle:[NSString stringWithFormat:@"%d", count] forState:UIControlStateNormal];
+                button.tag = count;
+            }
+            
+            [self.view addSubview:button];
+
+            button.layer.borderWidth = 1;
+            button.layer.borderColor = [UIColor colorWithRed:1.0 green:1.0 blue:1.0 alpha:0.1].CGColor;
+        }
+    }
+}
+
 #pragma mark - Events
+
+- (void)numberButtonClicked:(UIButton *)sender {
+    DLog(@"clicked on button with tag = %d", sender.tag);
+    if (sender.tag == kBackspaceButtonTag) {
+        // process backspace
+    } else {
+        // process click number button
+    }
+}
 
 - (IBAction)digitCodeTextFieldEditingChanged:(id)sender {
     // nhap du 4 ky tu -> bat dau check
