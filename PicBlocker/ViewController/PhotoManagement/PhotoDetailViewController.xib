@@ -7,7 +7,6 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PhotoDetailViewController">
             <connections>
-                <outlet property="importSettingView" destination="VPW-9i-xWl" id="5JR-UO-yTU"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -92,45 +91,12 @@
                         <constraint firstItem="Kzr-AM-evO" firstAttribute="leading" secondItem="Jlf-If-6Xc" secondAttribute="trailing" constant="30" id="wVL-xa-cb3"/>
                     </constraints>
                 </view>
-                <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="VPW-9i-xWl">
-                    <rect key="frame" x="211" y="8" width="100" height="71"/>
-                    <subviews>
-                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="setting_PopUp.png" translatesAutoresizingMaskIntoConstraints="NO" id="JYc-Bm-ay1">
-                            <rect key="frame" x="0.0" y="0.0" width="100" height="71"/>
-                        </imageView>
-                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uPI-9X-6Lo">
-                            <rect key="frame" x="8" y="14" width="84" height="24"/>
-                            <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                            <state key="normal" title="Import">
-                                <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
-                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                            </state>
-                        </button>
-                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kkd-aB-Stm">
-                            <rect key="frame" x="8" y="42" width="84" height="24"/>
-                            <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                            <state key="normal" title="Settings">
-                                <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
-                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                            </state>
-                        </button>
-                    </subviews>
-                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                </view>
-                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="splash_screen.png" translatesAutoresizingMaskIntoConstraints="NO" id="MhE-SZ-JXC">
-                    <rect key="frame" x="0.0" y="0.0" width="320" height="436"/>
-                </imageView>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
-                <constraint firstItem="VPW-9i-xWl" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="72" id="HsP-au-t1w"/>
                 <constraint firstItem="Qnf-Xe-LKL" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="Mhu-ht-ell"/>
                 <constraint firstAttribute="bottom" secondItem="Qnf-Xe-LKL" secondAttribute="bottom" id="VoH-hr-pGh"/>
-                <constraint firstItem="MhE-SZ-JXC" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="XQF-Vm-h7Z"/>
-                <constraint firstAttribute="trailing" secondItem="MhE-SZ-JXC" secondAttribute="trailing" id="d9j-4m-ct1"/>
-                <constraint firstAttribute="trailing" secondItem="VPW-9i-xWl" secondAttribute="trailing" constant="8" id="g8s-eY-6vh"/>
                 <constraint firstAttribute="trailing" secondItem="Qnf-Xe-LKL" secondAttribute="trailing" id="kcK-1h-ntZ"/>
-                <constraint firstItem="MhE-SZ-JXC" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="yuC-iD-15b"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <point key="canvasLocation" x="163" y="174"/>
@@ -144,8 +110,6 @@
         <image name="enlarge_icon.png" width="18" height="19"/>
         <image name="lock_selected_icon.png" width="17" height="22"/>
         <image name="lock_unselected_icon.png" width="17" height="22"/>
-        <image name="setting_PopUp.png" width="100" height="71"/>
         <image name="share_icon.png" width="19" height="22"/>
-        <image name="splash_screen.png" width="320" height="568"/>
     </resources>
 </document>

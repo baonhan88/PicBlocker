@@ -10,7 +10,8 @@
 
 @interface PhotoDetailViewController ()
 
-@property (strong, nonatomic) IBOutlet UIView *importSettingView;
+@property (strong, nonatomic) PopupView *popupView;
+@property (strong, nonatomic) UIImageView *imageView;
 
 @end
 
@@ -20,7 +21,20 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     
-    _importSettingView.hidden = YES;
+    CGSize winSize = [[UIScreen mainScreen] bounds].size;
+    
+    // add image full screen
+    _imageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"splash_screen"]];
+    _imageView.frame = CGRectMake(0, 64, winSize.width, winSize.height-44-64);
+    _imageView.contentMode = UIViewContentModeScaleAspectFit;
+    [self.view addSubview:_imageView];
+    
+    // init popup view
+    _popupView = [[[NSBundle mainBundle] loadNibNamed:@"PopupView" owner:self options:nil] objectAtIndex:0];
+    _popupView.frame = CGRectMake(winSize.width - _popupView.frame.size.width, 64, _popupView.frame.size.width, _popupView.frame.size.height);
+    _popupView.delegate = self;
+    [self.view addSubview:_popupView];
+    _popupView.hidden = YES;
     
     // init navigation bar
     self.title = @"Pic Blocker";
@@ -56,7 +70,24 @@
 
 - (void)importSettingButtonClicked:(id)sender {
     DLog(@"importSettingButtonClicked");
-    _importSettingView.hidden = !_importSettingView.hidden;
+    _popupView.hidden = !_popupView.hidden;
+}
+
+#pragma mark - PopupViewDelegate
+
+- (void)importButtonClicked {
+    _popupView.hidden = YES;
+    
+    DLog(@"importButtonClicked");
+    UIImagePickerController * imagePicker = [[UIImagePickerController alloc] init];
+    imagePicker.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
+    imagePicker.delegate = self;
+    [self presentViewController:imagePicker animated:YES completion:nil];
+}
+
+- (void)settingButtonClicked {
+    DLog(@"settingButtonClicked");
+    _popupView.hidden = YES;
 }
 
 @end

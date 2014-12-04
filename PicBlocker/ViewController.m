@@ -25,6 +25,9 @@
 //    PhotoManagementViewController *vc = [[PhotoManagementViewController alloc] initWithNibName:@"PhotoManagementViewController" bundle:nil];
 //    [self.navigationController pushViewController:vc animated:NO];
     
+//    SecurityQuestionViewController *vc = [[SecurityQuestionViewController alloc] initWithNibName:@"SecurityQuestionViewController" bundle:nil];
+//    [self.navigationController pushViewController:vc animated:NO];
+    
     if ([Utils isFirstTimeLaunchApp]) {
         UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
         SetupEmailViewController *setupEmailVC = [storyboard instantiateViewControllerWithIdentifier:@"SetupEmailViewController"];

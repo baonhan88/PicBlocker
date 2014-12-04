@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "PopupView.h"
 
-@interface PhotoDetailViewController : UIViewController
+@interface PhotoDetailViewController : UIViewController <PopupDelegate>
 
 @end

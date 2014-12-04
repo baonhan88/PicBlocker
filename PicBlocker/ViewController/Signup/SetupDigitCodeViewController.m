@@ -45,7 +45,7 @@
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
     
-    [_digitCodeTextField becomeFirstResponder];
+//    [_digitCodeTextField becomeFirstResponder];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -98,18 +98,7 @@
     }
 }
 
-#pragma mark - Events
-
-- (void)numberButtonClicked:(UIButton *)sender {
-    DLog(@"clicked on button with tag = %d", sender.tag);
-    if (sender.tag == kBackspaceButtonTag) {
-        // process backspace
-    } else {
-        // process click number button
-    }
-}
-
-- (IBAction)digitCodeTextFieldEditingChanged:(id)sender {
+- (void)checkDigitCode {
     // nhap du 4 ky tu -> bat dau check
     // neu chua setup digit
     // nhap lan 1 thi cho nhap lan 2 ky tu
@@ -153,8 +142,29 @@
         }
         
     }
+}
+
+#pragma mark - Events
+
+- (void)numberButtonClicked:(UIButton *)sender {
+    DLog(@"clicked on button with tag = %ld", sender.tag);
+    if (sender.tag == kBackspaceButtonTag) {
+        // process backspace
+        if ([_digitCodeTextField.text length] > 0) {
+            _digitCodeTextField.text = [_digitCodeTextField.text substringToIndex:[_digitCodeTextField.text length] - 1];
+            [self checkDigitCode];
+        } 
+    } else {
+        // process click number button
+        _digitCodeTextField.text = [NSString stringWithFormat:@"%@%ld", _digitCodeTextField.text, sender.tag];
+        [self checkDigitCode];
+    }
+}
+
+- (IBAction)forgotCodeButtonClicked:(id)sender {
     
 }
+
 
 #pragma mark - UITextFieldDelegate
 

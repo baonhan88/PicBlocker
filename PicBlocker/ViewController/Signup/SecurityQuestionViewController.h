@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface SecurityQuestionViewController : UIViewController
+@interface SecurityQuestionViewController : UIViewController <UITextFieldDelegate, UIPickerViewDataSource, UIPickerViewDelegate>
 
 @end

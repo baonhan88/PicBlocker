@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7B18824C1A30902400296978 /* PopupView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B18824B1A30902400296978 /* PopupView.m */; };
+		7B18824E1A30904000296978 /* PopupView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7B18824D1A30904000296978 /* PopupView.xib */; };
 		7B2861161A2CA5CD006E7719 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B2861151A2CA5CD006E7719 /* main.m */; };
 		7B2861191A2CA5CD006E7719 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B2861181A2CA5CD006E7719 /* AppDelegate.m */; };
 		7B28611C1A2CA5CD006E7719 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B28611B1A2CA5CD006E7719 /* ViewController.m */; };
@@ -50,12 +52,12 @@
 		7B9E83711A2DF1AC003AA48D /* SetupDigitCodeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B9E836B1A2DF1AC003AA48D /* SetupDigitCodeViewController.m */; };
 		7B9E83721A2DF1AC003AA48D /* SetupDigitCodeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7B9E836C1A2DF1AC003AA48D /* SetupDigitCodeViewController.xib */; };
 		7B9E83731A2DF1AC003AA48D /* SetupEmailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B9E836E1A2DF1AC003AA48D /* SetupEmailViewController.m */; };
-		7B9E83771A2DF5EA003AA48D /* PhotoManagementViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B9E83751A2DF5EA003AA48D /* PhotoManagementViewController.m */; };
-		7B9E83781A2DF5EA003AA48D /* PhotoManagementViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7B9E83761A2DF5EA003AA48D /* PhotoManagementViewController.xib */; };
 		7B9E837C1A2E03D9003AA48D /* PhotoCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B9E837A1A2E03D9003AA48D /* PhotoCollectionViewCell.m */; };
 		7B9E837D1A2E03D9003AA48D /* PhotoCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7B9E837B1A2E03D9003AA48D /* PhotoCollectionViewCell.xib */; };
 		7B9E83811A2E1D80003AA48D /* PhotoDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B9E837F1A2E1D80003AA48D /* PhotoDetailViewController.m */; };
 		7B9E83821A2E1D80003AA48D /* PhotoDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7B9E83801A2E1D80003AA48D /* PhotoDetailViewController.xib */; };
+		7BA308E01A308D920004C60D /* PhotoManagementViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BA308DE1A308D920004C60D /* PhotoManagementViewController.m */; };
+		7BA308E11A308D920004C60D /* PhotoManagementViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7BA308DF1A308D920004C60D /* PhotoManagementViewController.xib */; };
 		7BB207BF1A2F49B20076EB41 /* PhotoEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BB207BE1A2F49B20076EB41 /* PhotoEntity.m */; };
 		F8D17D641A2F188A001DA980 /* NSAlert+MKNetworkKitAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = F8D17D4F1A2F188A001DA980 /* NSAlert+MKNetworkKitAdditions.m */; };
 		F8D17D651A2F188A001DA980 /* NSData+MKBase64.m in Sources */ = {isa = PBXBuildFile; fileRef = F8D17D511A2F188A001DA980 /* NSData+MKBase64.m */; };
@@ -83,6 +85,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		7B18824A1A30902400296978 /* PopupView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PopupView.h; path = PicBlocker/ViewController/PhotoManagement/PopupView.h; sourceTree = SOURCE_ROOT; };
+		7B18824B1A30902400296978 /* PopupView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PopupView.m; path = PicBlocker/ViewController/PhotoManagement/PopupView.m; sourceTree = SOURCE_ROOT; };
+		7B18824D1A30904000296978 /* PopupView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PopupView.xib; sourceTree = "<group>"; };
 		7B2861101A2CA5CD006E7719 /* PicBlocker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PicBlocker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7B2861141A2CA5CD006E7719 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7B2861151A2CA5CD006E7719 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -137,15 +142,15 @@
 		7B9E836C1A2DF1AC003AA48D /* SetupDigitCodeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SetupDigitCodeViewController.xib; sourceTree = "<group>"; };
 		7B9E836D1A2DF1AC003AA48D /* SetupEmailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SetupEmailViewController.h; sourceTree = "<group>"; };
 		7B9E836E1A2DF1AC003AA48D /* SetupEmailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SetupEmailViewController.m; sourceTree = "<group>"; };
-		7B9E83741A2DF5EA003AA48D /* PhotoManagementViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhotoManagementViewController.h; sourceTree = "<group>"; };
-		7B9E83751A2DF5EA003AA48D /* PhotoManagementViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhotoManagementViewController.m; sourceTree = "<group>"; };
-		7B9E83761A2DF5EA003AA48D /* PhotoManagementViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PhotoManagementViewController.xib; sourceTree = "<group>"; };
 		7B9E83791A2E03D9003AA48D /* PhotoCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhotoCollectionViewCell.h; sourceTree = "<group>"; };
 		7B9E837A1A2E03D9003AA48D /* PhotoCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhotoCollectionViewCell.m; sourceTree = "<group>"; };
 		7B9E837B1A2E03D9003AA48D /* PhotoCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PhotoCollectionViewCell.xib; sourceTree = "<group>"; };
 		7B9E837E1A2E1D80003AA48D /* PhotoDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhotoDetailViewController.h; sourceTree = "<group>"; };
 		7B9E837F1A2E1D80003AA48D /* PhotoDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhotoDetailViewController.m; sourceTree = "<group>"; };
 		7B9E83801A2E1D80003AA48D /* PhotoDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PhotoDetailViewController.xib; sourceTree = "<group>"; };
+		7BA308DD1A308D920004C60D /* PhotoManagementViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhotoManagementViewController.h; sourceTree = "<group>"; };
+		7BA308DE1A308D920004C60D /* PhotoManagementViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhotoManagementViewController.m; sourceTree = "<group>"; };
+		7BA308DF1A308D920004C60D /* PhotoManagementViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PhotoManagementViewController.xib; sourceTree = "<group>"; };
 		7BB207BD1A2F49B20076EB41 /* PhotoEntity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhotoEntity.h; sourceTree = "<group>"; };
 		7BB207BE1A2F49B20076EB41 /* PhotoEntity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhotoEntity.m; sourceTree = "<group>"; };
 		F8D17D4E1A2F188A001DA980 /* NSAlert+MKNetworkKitAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSAlert+MKNetworkKitAdditions.h"; sourceTree = "<group>"; };
@@ -399,15 +404,15 @@
 		7B9E83651A2DF1AC003AA48D /* PhotoManagement */ = {
 			isa = PBXGroup;
 			children = (
-				7B9E83741A2DF5EA003AA48D /* PhotoManagementViewController.h */,
-				7B9E83751A2DF5EA003AA48D /* PhotoManagementViewController.m */,
-				7B9E83761A2DF5EA003AA48D /* PhotoManagementViewController.xib */,
 				7B9E83791A2E03D9003AA48D /* PhotoCollectionViewCell.h */,
 				7B9E837A1A2E03D9003AA48D /* PhotoCollectionViewCell.m */,
 				7B9E837B1A2E03D9003AA48D /* PhotoCollectionViewCell.xib */,
 				7B9E837E1A2E1D80003AA48D /* PhotoDetailViewController.h */,
 				7B9E837F1A2E1D80003AA48D /* PhotoDetailViewController.m */,
 				7B9E83801A2E1D80003AA48D /* PhotoDetailViewController.xib */,
+				7BA308DD1A308D920004C60D /* PhotoManagementViewController.h */,
+				7BA308DE1A308D920004C60D /* PhotoManagementViewController.m */,
+				7BA308DF1A308D920004C60D /* PhotoManagementViewController.xib */,
 			);
 			path = PhotoManagement;
 			sourceTree = "<group>";
@@ -500,6 +505,9 @@
 		F8DAE6181A2D5796003151ED /* View */ = {
 			isa = PBXGroup;
 			children = (
+				7B18824A1A30902400296978 /* PopupView.h */,
+				7B18824B1A30902400296978 /* PopupView.m */,
+				7B18824D1A30904000296978 /* PopupView.xib */,
 				F8DAE6191A2D5814003151ED /* RegisterEmailView.h */,
 				F8DAE61A1A2D5814003151ED /* RegisterEmailView.m */,
 				F8DAE61C1A2D5846003151ED /* RegisterEmailView.xib */,
@@ -613,7 +621,6 @@
 				7B9E834B1A2DE254003AA48D /* Not_now_button@2x.png in Resources */,
 				7B9E834A1A2DE254003AA48D /* updown_arrow_Screen_10@2x.png in Resources */,
 				7B9E835B1A2DE254003AA48D /* enlarge_icon@2x.png in Resources */,
-				7B9E83781A2DF5EA003AA48D /* PhotoManagementViewController.xib in Resources */,
 				7B9E83471A2DE254003AA48D /* go_button@2x.png in Resources */,
 				7B9E834D1A2DE254003AA48D /* Yes_button@2x.png in Resources */,
 				7B9E83721A2DF1AC003AA48D /* SetupDigitCodeViewController.xib in Resources */,
@@ -633,6 +640,8 @@
 				7B9E83701A2DF1AC003AA48D /* SecurityQuestionViewController.xib in Resources */,
 				F8DAE61D1A2D5846003151ED /* RegisterEmailView.xib in Resources */,
 				7B2861211A2CA5CD006E7719 /* Images.xcassets in Resources */,
+				7BA308E11A308D920004C60D /* PhotoManagementViewController.xib in Resources */,
+				7B18824E1A30904000296978 /* PopupView.xib in Resources */,
 				7B9E835F1A2DE254003AA48D /* Share_selected_icon@2x.png in Resources */,
 				7B9E834F1A2DE254003AA48D /* code_box@2x.png in Resources */,
 			);
@@ -652,7 +661,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7B9E83771A2DF5EA003AA48D /* PhotoManagementViewController.m in Sources */,
 				7B9E83811A2E1D80003AA48D /* PhotoDetailViewController.m in Sources */,
 				7B28611C1A2CA5CD006E7719 /* ViewController.m in Sources */,
 				F8D17D641A2F188A001DA980 /* NSAlert+MKNetworkKitAdditions.m in Sources */,
@@ -660,6 +668,7 @@
 				7B9E837C1A2E03D9003AA48D /* PhotoCollectionViewCell.m in Sources */,
 				7BB207BF1A2F49B20076EB41 /* PhotoEntity.m in Sources */,
 				F8D17D6C1A2F188A001DA980 /* MKNetworkOperation.m in Sources */,
+				7BA308E01A308D920004C60D /* PhotoManagementViewController.m in Sources */,
 				7B9E836F1A2DF1AC003AA48D /* SecurityQuestionViewController.m in Sources */,
 				7B9E83711A2DF1AC003AA48D /* SetupDigitCodeViewController.m in Sources */,
 				F8D17D651A2F188A001DA980 /* NSData+MKBase64.m in Sources */,
@@ -673,6 +682,7 @@
 				7B9E83731A2DF1AC003AA48D /* SetupEmailViewController.m in Sources */,
 				F8D17D6A1A2F188A001DA980 /* UIImageView+MKNetworkKitAdditions.m in Sources */,
 				7B9805BB1A2CC0660075B6F6 /* Utils.m in Sources */,
+				7B18824C1A30902400296978 /* PopupView.m in Sources */,
 				F8D17D681A2F188A001DA980 /* NSString+MKNetworkKitAdditions.m in Sources */,
 				7B2861161A2CA5CD006E7719 /* main.m in Sources */,
 			);

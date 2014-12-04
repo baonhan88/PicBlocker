@@ -2,7 +2,7 @@
 //  PhotoManagementViewController.m
 //  PicBlocker
 //
-//  Created by NhanB on 12/2/14.
+//  Created by NhanB on 12/4/14.
 //  Copyright (c) 2014 NhanB. All rights reserved.
 //
 
@@ -11,13 +11,11 @@
 #import "PhotoDetailViewController.h"
 #import "PhotoEntity.h"
 
-#define kNumberColumn       4
-
 @interface PhotoManagementViewController ()
 
-@property (strong, nonatomic) IBOutlet UICollectionView *photoCollectionView;
+//@property (strong, nonatomic) IBOutlet UICollectionView *photoCollectionView;
 
-@property (strong, nonatomic) IBOutlet UIView *importSettingView;
+@property (strong, nonatomic) PopupView *popupView;
 
 @property (strong, nonatomic) NSMutableArray *photoList;
 
@@ -29,7 +27,14 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     
-    _importSettingView.hidden = YES;
+    CGSize winSize = [[UIScreen mainScreen] bounds].size;
+    
+    // init popup view
+    _popupView = [[[NSBundle mainBundle] loadNibNamed:@"PopupView" owner:self options:nil] objectAtIndex:0];
+    _popupView.frame = CGRectMake(winSize.width - _popupView.frame.size.width, 64, _popupView.frame.size.width, _popupView.frame.size.height);
+    _popupView.delegate = self;
+    [self.view addSubview:_popupView];
+    _popupView.hidden = YES;
     
     // init navigation bar
     self.title = @"Pic Blocker";
@@ -39,25 +44,28 @@
                                                                     target:self
                                                                     action:@selector(cameraButtonClicked:)];
     UIBarButtonItem *importSettingButton = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"header_setting_icon"]
-                                                                     style:UIBarButtonItemStylePlain
-                                                                    target:self
-                                                                    action:@selector(importSettingButtonClicked:)];
+                                                                            style:UIBarButtonItemStylePlain
+                                                                           target:self
+                                                                           action:@selector(importSettingButtonClicked:)];
     
     self.navigationItem.rightBarButtonItems = [NSArray arrayWithObjects:importSettingButton, cameraButton, nil];
     
     // init photo list
     UIImage *image = [UIImage imageNamed:@"Lock_Unlock_Pop_Up_delet_icon"];
-    [self saveImage:image];
+    //    [self saveImage:image];
+    //    for (int i=0; i<30; i++) {
+    //        [self saveImage:image];
+    //    }
     
     _photoList = [[NSMutableArray alloc] init];
     [self loadFileFromDocumentFolder:@""];
-
+    
     
     // register photo cell
     UINib *cellNib = [UINib nibWithNibName:@"PhotoCollectionViewCell" bundle:nil];
-
-    [_photoCollectionView registerNib:cellNib
-           forCellWithReuseIdentifier:@"PhotoCollectionViewCell"];
+    
+    [self.collectionView registerNib:cellNib
+          forCellWithReuseIdentifier:@"PhotoCollectionViewCell"];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -99,28 +107,32 @@
         entity.path = outputPath;
         [_photoList addObject:entity];
     }
-//    DLog(@"_photoList = %@", [_photoList description]);
+    //    DLog(@"_photoList = %@", [_photoList description]);
 }
 
 #pragma mark - UICollectionViewDataSource & UICollectionViewDelegate
 
 - (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView {
-    if (_photoList.count%kNumberColumn == 0) {
-        return _photoList.count/kNumberColumn;
+    int numberColumn = [[UIScreen mainScreen] bounds].size.width > 320 ? 4 : 3;
+    
+    if (_photoList.count%numberColumn == 0) {
+        return _photoList.count/numberColumn;
     }
-    return (_photoList.count/kNumberColumn) + 1;
+    return (_photoList.count/numberColumn) + 1;
 }
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
-    if (_photoList.count/(section+1) < kNumberColumn) {
-        return _photoList.count%kNumberColumn;
+    int numberColumn = [[UIScreen mainScreen] bounds].size.width > 320 ? 4 : 3;
+    
+    if (_photoList.count/(section+1) < numberColumn) {
+        return _photoList.count%numberColumn;
     }
-    return kNumberColumn;
+    return numberColumn;
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     PhotoCollectionViewCell *photoCell = [collectionView dequeueReusableCellWithReuseIdentifier:@"PhotoCollectionViewCell"
-                                              forIndexPath:indexPath];
+                                                                                   forIndexPath:indexPath];
     
     PhotoEntity *entity = [_photoList objectAtIndex:indexPath.row];
     photoCell.imageView.image = [UIImage imageWithContentsOfFile:entity.path];
@@ -138,31 +150,32 @@
 
 - (void)cameraButtonClicked:(id)sender {
     DLog(@"cameraButtonClicked");
-//    UIImagePickerController * imagePicker = [[UIImagePickerController alloc] init];
-//    imagePicker.sourceType = UIImagePickerControllerSourceTypeCamera;
-//    imagePicker.delegate = self;
-//    [self presentViewController:imagePicker animated:YES completion:nil];
+    //    UIImagePickerController * imagePicker = [[UIImagePickerController alloc] init];
+    //    imagePicker.sourceType = UIImagePickerControllerSourceTypeCamera;
+    //    imagePicker.delegate = self;
+    //    [self presentViewController:imagePicker animated:YES completion:nil];
 }
 
 - (void)importSettingButtonClicked:(id)sender {
     DLog(@"importSettingButtonClicked");
-    _importSettingView.hidden = !_importSettingView.hidden;
+    _popupView.hidden = !_popupView.hidden;
 }
 
-- (IBAction)importButtonClicked:(id)sender {
-    _importSettingView.hidden = YES;
+#pragma mark - PopupViewDelegate
+
+- (void)importButtonClicked {
+    _popupView.hidden = YES;
     
     DLog(@"importButtonClicked");
     UIImagePickerController * imagePicker = [[UIImagePickerController alloc] init];
     imagePicker.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
     imagePicker.delegate = self;
     [self presentViewController:imagePicker animated:YES completion:nil];
-
 }
 
-- (IBAction)settingButtonClicked:(id)sender {
+- (void)settingButtonClicked {
     DLog(@"settingButtonClicked");
-    _importSettingView.hidden = YES;
+    _popupView.hidden = YES;
 }
 
 #pragma mark - UIImagePickerControllerDelegate
@@ -176,8 +189,8 @@
     [self saveImage:image];
     
     // khong co tac dung
-    [_photoCollectionView reloadData];
-
+    [self.collectionView reloadData];
+    
     // You have the image. You can use this to present the image in the next view like you require in `#3`.
     
     [picker dismissViewControllerAnimated:YES completion:nil];

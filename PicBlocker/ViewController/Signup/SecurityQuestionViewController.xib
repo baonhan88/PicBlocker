@@ -46,12 +46,15 @@
                             <textInputTraits key="textInputTraits" keyboardType="emailAddress"/>
                             <variation key="default">
                                 <mask key="constraints">
-                                    <exclude reference="t5A-e2-Pfp"/>
                                     <exclude reference="Fs7-aD-JGO"/>
-                                    <exclude reference="vGe-3S-MCR"/>
                                     <exclude reference="PxP-iL-iRe"/>
+                                    <exclude reference="t5A-e2-Pfp"/>
+                                    <exclude reference="vGe-3S-MCR"/>
                                 </mask>
                             </variation>
+                            <connections>
+                                <outlet property="delegate" destination="-1" id="Zs2-fY-TGa"/>
+                            </connections>
                         </textField>
                         <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="What is your favorite color?" minimumFontSize="17" background="email_box.png" translatesAutoresizingMaskIntoConstraints="NO" id="qaZ-wM-Ncd">
                             <rect key="frame" x="155" y="207" width="291" height="43"/>
@@ -68,12 +71,15 @@
                             <textInputTraits key="textInputTraits" keyboardType="emailAddress"/>
                             <variation key="default">
                                 <mask key="constraints">
+                                    <exclude reference="FBo-Su-Mqw"/>
+                                    <exclude reference="PNc-L0-ESX"/>
                                     <exclude reference="VkO-Pd-eT5"/>
                                     <exclude reference="c58-KP-ymK"/>
-                                    <exclude reference="PNc-L0-ESX"/>
-                                    <exclude reference="FBo-Su-Mqw"/>
                                 </mask>
                             </variation>
+                            <connections>
+                                <outlet property="delegate" destination="-1" id="7x6-OZ-VgO"/>
+                            </connections>
                         </textField>
                         <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fHg-pv-Nur">
                             <rect key="frame" x="155" y="328" width="291" height="43"/>
