@@ -11,10 +11,12 @@
 @interface Utils : NSObject
 
 + (BOOL)validateEmail:(NSString *)email;
++ (BOOL)isFullVersion;
 
 + (BOOL)isFirstTimeLaunchApp;
 + (NSString *)getPasscode;
 + (void)setPasscodeWithCode:(NSString *)passcode;
 + (NSString *)nameForImage;
++ (NSString *)pathForImageWithName:(NSString *)name;
 
 @end

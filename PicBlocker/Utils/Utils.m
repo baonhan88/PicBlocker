@@ -24,6 +24,10 @@
     return [emailTest evaluateWithObject:email];
 }
 
++ (BOOL)isFullVersion {
+    return NO;
+}
+
 #pragma mark - User Defaults
 
 + (BOOL)isFirstTimeLaunchApp {
@@ -57,6 +61,10 @@
     NSString *tmp = [NSString stringWithFormat:@"%f",[[NSDate date] timeIntervalSince1970] * 1000];
     return [tmp stringByReplacingOccurrencesOfString:@"." withString:@""];
     
+}
+
++ (NSString *)pathForImageWithName:(NSString *)name {
+    return [NSHomeDirectory() stringByAppendingPathComponent:[NSString stringWithFormat:@"Documents/%@.jpg", name]];
 }
 
 @end

@@ -20,7 +20,9 @@
 
 - (NSMutableArray *)getPhotoList;
 - (void)insertPhotoWithEntity:(PhotoEntity *)entity;
-- (void)updatePhotoWithEntity:(PhotoEntity *)entity;
+- (void)lockPhotoWithEntity:(PhotoEntity *)entity;
+- (void)unlockPhotoWithEntity:(PhotoEntity *)entity;
+- (int)numberPhotoLocked;
 - (void)deletePhotoWithEntity:(PhotoEntity *)entity;
 
 @end

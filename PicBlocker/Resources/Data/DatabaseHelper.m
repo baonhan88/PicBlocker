@@ -7,6 +7,7 @@
 //
 
 #import "DatabaseHelper.h"
+#import "FMDatabaseAdditions.h"
 
 #define kDatabaseName               @"PicBlocker.sqlite"
 #define kPhotoTableName             @"photo"
@@ -96,12 +97,33 @@ static DatabaseHelper *_shareDatabase = nil;
     }
 }
 
-- (void)updatePhotoWithEntity:(PhotoEntity *)entity {
-    NSString *query = [NSString stringWithFormat:@"UPDATE %@ set lock = %d WHERE name = '%@'", kPhotoTableName, entity.isLock, entity.name];
+- (void)lockPhotoWithEntity:(PhotoEntity *)entity {
+    NSString *query = [NSString stringWithFormat:@"UPDATE %@ set lock = 1 WHERE name = '%@'", kPhotoTableName, entity.name];
     if([self open]) {
         [database executeUpdate:query];
         [self close];
     }
+}
+
+- (void)unlockPhotoWithEntity:(PhotoEntity *)entity {
+    NSString *query = [NSString stringWithFormat:@"UPDATE %@ set lock = 0 WHERE name = '%@'", kPhotoTableName, entity.name];
+    if([self open]) {
+        [database executeUpdate:query];
+        [self close];
+    }
+}
+
+- (int)numberPhotoLocked {
+//    int count = 0;
+//    NSString *query = [NSString stringWithFormat:@"SELECT * FROM %@", kPhotoTableName];
+//    if([self open]) {
+//        FMResultSet *result = [database executeQuery:query];
+//        
+//        count = [result intForColumnIndex:1];
+//        [self close];
+//    }
+    
+    return [database intForQuery:@"SELECT COUNT(*) FROM %@", kPhotoTableName];
 }
 
 - (void)deletePhotoWithEntity:(PhotoEntity *)entity {
