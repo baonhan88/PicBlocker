@@ -1,0 +1,35 @@
+K 25
+svn:wc:ra_dav:version-url
+V 115
+/repository/!svn/ver/19076/ARISVN/Working/Common/GOTraingTest/trunk/04_Source/GOTrainingTest/GOTrainingTest/01_Data
+END
+DatabaseHelper.m
+K 25
+svn:wc:ra_dav:version-url
+V 132
+/repository/!svn/ver/19076/ARISVN/Working/Common/GOTraingTest/trunk/04_Source/GOTrainingTest/GOTrainingTest/01_Data/DatabaseHelper.m
+END
+TrainingEntity.m
+K 25
+svn:wc:ra_dav:version-url
+V 132
+/repository/!svn/ver/16375/ARISVN/Working/Common/GOTraingTest/trunk/04_Source/GOTrainingTest/GOTrainingTest/01_Data/TrainingEntity.m
+END
+GOTrainingTest_1.1.0_db.sqlite
+K 25
+svn:wc:ra_dav:version-url
+V 146
+/repository/!svn/ver/19117/ARISVN/Working/Common/GOTraingTest/trunk/04_Source/GOTrainingTest/GOTrainingTest/01_Data/GOTrainingTest_1.1.0_db.sqlite
+END
+DatabaseHelper.h
+K 25
+svn:wc:ra_dav:version-url
+V 132
+/repository/!svn/ver/16674/ARISVN/Working/Common/GOTraingTest/trunk/04_Source/GOTrainingTest/GOTrainingTest/01_Data/DatabaseHelper.h
+END
+TrainingEntity.h
+K 25
+svn:wc:ra_dav:version-url
+V 132
+/repository/!svn/ver/16375/ARISVN/Working/Common/GOTraingTest/trunk/04_Source/GOTrainingTest/GOTrainingTest/01_Data/TrainingEntity.h
+END

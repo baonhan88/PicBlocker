@@ -1,0 +1,25 @@
+//
+//  TrainingEntity.h
+//  GOTrainingTest
+//
+//  Created by Nhan Bao on 3/13/14.
+//  Copyright (c) 2014 ARIS VietNam. All rights reserved.
+//
+
+#import <Foundation/Foundation.h>
+
+@class FMResultSet;
+
+@interface TrainingEntity : NSObject
+
+@property (nonatomic, assign) NSInteger ID;
+@property (nonatomic, retain) NSString *career;
+@property (nonatomic, retain) NSString *course;
+@property (nonatomic, retain) NSString *questionImage;
+@property (nonatomic, retain) NSString *answerImage;
+@property (nonatomic, assign) NSInteger correctAnswerNum;
+@property (nonatomic, assign) NSInteger answerNum;
+
++ (TrainingEntity *)trainingEntityFromDatabase:(FMResultSet *)set;
+
+@end

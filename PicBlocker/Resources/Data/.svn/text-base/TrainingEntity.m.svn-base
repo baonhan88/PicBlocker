@@ -1,0 +1,44 @@
+//
+//  TrainingEntity.m
+//  GOTrainingTest
+//
+//  Created by Nhan Bao on 3/13/14.
+//  Copyright (c) 2014 ARIS VietNam. All rights reserved.
+//
+
+#import "TrainingEntity.h"
+#import "FMDatabase.h"
+
+@implementation TrainingEntity
+
+@synthesize ID;
+@synthesize career;
+@synthesize course;
+@synthesize questionImage;
+@synthesize answerImage;
+@synthesize correctAnswerNum;
+@synthesize answerNum;
+
+- (id)init {
+    self = [super init];
+    if (self) {
+        self.ID = -1;
+        self.answerNum = 0;
+    }
+    return self;
+}
+
++ (TrainingEntity *)trainingEntityFromDatabase:(FMResultSet *)set {
+    TrainingEntity *entity = [[TrainingEntity alloc] init];
+    
+    entity.ID = [set intForColumn:@"id"];
+    entity.career = [set stringForColumn:@"career"];
+    entity.course = [set stringForColumn:@"course"];
+    entity.questionImage = [set stringForColumn:@"questionImage"];
+    entity.answerImage = [set stringForColumn:@"answerImage"];
+    entity.correctAnswerNum = [set intForColumn:@"correctAnswerNum"];
+
+    return entity;
+}
+
+@end

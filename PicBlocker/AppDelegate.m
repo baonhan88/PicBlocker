@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import "DatabaseHelper.h"
 
 @interface AppDelegate ()
 
@@ -28,6 +29,16 @@
       NSForegroundColorAttributeName,[UIFont fontWithName:@"Arial-Bold" size:17.0],
       NSFontAttributeName,
       nil]];
+    
+    // test DB
+//    PhotoEntity *delete = [[PhotoEntity alloc] init];
+//    delete.name = @"aaa";
+//    [[DatabaseHelper shareDatabase] deletePhotoWithEntity:delete];
+//    
+//    NSMutableArray *photoList = [[DatabaseHelper shareDatabase] getPhotoList];
+//    for (PhotoEntity *entity in photoList) {
+//        DLog(@"photo name:%@ | path:%@ | isLock:%d", entity.name, entity.path, entity.isLock);
+//    }
 
     return YES;
 }

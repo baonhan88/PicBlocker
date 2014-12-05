@@ -54,7 +54,8 @@
 }
 
 + (NSString *)nameForImage {
-    return [NSString stringWithFormat:@"%f",[[NSDate date] timeIntervalSince1970] * 1000];
+    NSString *tmp = [NSString stringWithFormat:@"%f",[[NSDate date] timeIntervalSince1970] * 1000];
+    return [tmp stringByReplacingOccurrencesOfString:@"." withString:@""];
     
 }
 

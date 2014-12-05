@@ -76,6 +76,18 @@
 		F8D383CA1A31507D00894D7B /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F8D383C41A31507D00894D7B /* Icon@2x.png */; };
 		F8D383CB1A31507D00894D7B /* iTunesArtwork.png in Resources */ = {isa = PBXBuildFile; fileRef = F8D383C51A31507D00894D7B /* iTunesArtwork.png */; };
 		F8D383CC1A31507D00894D7B /* iTunesArtwork@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F8D383C61A31507D00894D7B /* iTunesArtwork@2x.png */; };
+		F8D383DC1A31559800894D7B /* DatabaseHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = F8D383CF1A31559800894D7B /* DatabaseHelper.m */; };
+		F8D383DD1A31559800894D7B /* FMDatabase.m in Sources */ = {isa = PBXBuildFile; fileRef = F8D383D21A31559800894D7B /* FMDatabase.m */; };
+		F8D383DE1A31559800894D7B /* FMDatabaseAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = F8D383D41A31559800894D7B /* FMDatabaseAdditions.m */; };
+		F8D383DF1A31559800894D7B /* FMDatabasePool.m in Sources */ = {isa = PBXBuildFile; fileRef = F8D383D61A31559800894D7B /* FMDatabasePool.m */; };
+		F8D383E01A31559800894D7B /* FMDatabaseQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = F8D383D81A31559800894D7B /* FMDatabaseQueue.m */; };
+		F8D383E11A31559800894D7B /* FMResultSet.m in Sources */ = {isa = PBXBuildFile; fileRef = F8D383DA1A31559800894D7B /* FMResultSet.m */; };
+		F8D383E21A31559800894D7B /* PicBlocker.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = F8D383DB1A31559800894D7B /* PicBlocker.sqlite */; };
+		F8D383E41A31562B00894D7B /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F8D383E31A31562B00894D7B /* MessageUI.framework */; };
+		F8D383E61A31563500894D7B /* libsqlite3.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = F8D383E51A31563500894D7B /* libsqlite3.0.dylib */; };
+		F8D383E81A31564000894D7B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F8D383E71A31564000894D7B /* Foundation.framework */; };
+		F8D383EA1A31564800894D7B /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F8D383E91A31564800894D7B /* CoreGraphics.framework */; };
+		F8D383EC1A31565000894D7B /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F8D383EB1A31565000894D7B /* UIKit.framework */; };
 		F8DAE61B1A2D5814003151ED /* RegisterEmailView.m in Sources */ = {isa = PBXBuildFile; fileRef = F8DAE61A1A2D5814003151ED /* RegisterEmailView.m */; };
 		F8DAE61D1A2D5846003151ED /* RegisterEmailView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F8DAE61C1A2D5846003151ED /* RegisterEmailView.xib */; };
 /* End PBXBuildFile section */
@@ -188,6 +200,24 @@
 		F8D383C41A31507D00894D7B /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon@2x.png"; sourceTree = "<group>"; };
 		F8D383C51A31507D00894D7B /* iTunesArtwork.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = iTunesArtwork.png; sourceTree = "<group>"; };
 		F8D383C61A31507D00894D7B /* iTunesArtwork@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "iTunesArtwork@2x.png"; sourceTree = "<group>"; };
+		F8D383CE1A31559800894D7B /* DatabaseHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DatabaseHelper.h; sourceTree = "<group>"; };
+		F8D383CF1A31559800894D7B /* DatabaseHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DatabaseHelper.m; sourceTree = "<group>"; };
+		F8D383D11A31559800894D7B /* FMDatabase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabase.h; sourceTree = "<group>"; };
+		F8D383D21A31559800894D7B /* FMDatabase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabase.m; sourceTree = "<group>"; };
+		F8D383D31A31559800894D7B /* FMDatabaseAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabaseAdditions.h; sourceTree = "<group>"; };
+		F8D383D41A31559800894D7B /* FMDatabaseAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabaseAdditions.m; sourceTree = "<group>"; };
+		F8D383D51A31559800894D7B /* FMDatabasePool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabasePool.h; sourceTree = "<group>"; };
+		F8D383D61A31559800894D7B /* FMDatabasePool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabasePool.m; sourceTree = "<group>"; };
+		F8D383D71A31559800894D7B /* FMDatabaseQueue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabaseQueue.h; sourceTree = "<group>"; };
+		F8D383D81A31559800894D7B /* FMDatabaseQueue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabaseQueue.m; sourceTree = "<group>"; };
+		F8D383D91A31559800894D7B /* FMResultSet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMResultSet.h; sourceTree = "<group>"; };
+		F8D383DA1A31559800894D7B /* FMResultSet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMResultSet.m; sourceTree = "<group>"; };
+		F8D383DB1A31559800894D7B /* PicBlocker.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = PicBlocker.sqlite; sourceTree = "<group>"; };
+		F8D383E31A31562B00894D7B /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
+		F8D383E51A31563500894D7B /* libsqlite3.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.0.dylib; path = usr/lib/libsqlite3.0.dylib; sourceTree = SDKROOT; };
+		F8D383E71A31564000894D7B /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		F8D383E91A31564800894D7B /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		F8D383EB1A31565000894D7B /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		F8DAE6191A2D5814003151ED /* RegisterEmailView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegisterEmailView.h; sourceTree = "<group>"; };
 		F8DAE61A1A2D5814003151ED /* RegisterEmailView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegisterEmailView.m; sourceTree = "<group>"; };
 		F8DAE61C1A2D5846003151ED /* RegisterEmailView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RegisterEmailView.xib; sourceTree = "<group>"; };
@@ -198,6 +228,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F8D383EC1A31565000894D7B /* UIKit.framework in Frameworks */,
+				F8D383EA1A31564800894D7B /* CoreGraphics.framework in Frameworks */,
+				F8D383E81A31564000894D7B /* Foundation.framework in Frameworks */,
+				F8D383E61A31563500894D7B /* libsqlite3.0.dylib in Frameworks */,
+				F8D383E41A31562B00894D7B /* MessageUI.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -214,6 +249,11 @@
 		7B2861071A2CA5CD006E7719 = {
 			isa = PBXGroup;
 			children = (
+				F8D383EB1A31565000894D7B /* UIKit.framework */,
+				F8D383E91A31564800894D7B /* CoreGraphics.framework */,
+				F8D383E71A31564000894D7B /* Foundation.framework */,
+				F8D383E51A31563500894D7B /* libsqlite3.0.dylib */,
+				F8D383E31A31562B00894D7B /* MessageUI.framework */,
 				7B2861121A2CA5CD006E7719 /* PicBlocker */,
 				7B28612C1A2CA5CD006E7719 /* PicBlockerTests */,
 				7B2861111A2CA5CD006E7719 /* Products */,
@@ -528,6 +568,34 @@
 			path = app_icon;
 			sourceTree = "<group>";
 		};
+		F8D383CD1A31559800894D7B /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				F8D383D01A31559800894D7B /* FMDB */,
+				F8D383CE1A31559800894D7B /* DatabaseHelper.h */,
+				F8D383CF1A31559800894D7B /* DatabaseHelper.m */,
+				F8D383DB1A31559800894D7B /* PicBlocker.sqlite */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		F8D383D01A31559800894D7B /* FMDB */ = {
+			isa = PBXGroup;
+			children = (
+				F8D383D11A31559800894D7B /* FMDatabase.h */,
+				F8D383D21A31559800894D7B /* FMDatabase.m */,
+				F8D383D31A31559800894D7B /* FMDatabaseAdditions.h */,
+				F8D383D41A31559800894D7B /* FMDatabaseAdditions.m */,
+				F8D383D51A31559800894D7B /* FMDatabasePool.h */,
+				F8D383D61A31559800894D7B /* FMDatabasePool.m */,
+				F8D383D71A31559800894D7B /* FMDatabaseQueue.h */,
+				F8D383D81A31559800894D7B /* FMDatabaseQueue.m */,
+				F8D383D91A31559800894D7B /* FMResultSet.h */,
+				F8D383DA1A31559800894D7B /* FMResultSet.m */,
+			);
+			path = FMDB;
+			sourceTree = "<group>";
+		};
 		F8DAE6181A2D5796003151ED /* View */ = {
 			isa = PBXGroup;
 			children = (
@@ -544,6 +612,7 @@
 		F8DAE61E1A2D5967003151ED /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				F8D383CD1A31559800894D7B /* Data */,
 				7B9E83191A2DE254003AA48D /* Images */,
 			);
 			path = Resources;
@@ -671,6 +740,7 @@
 				7B9E83701A2DF1AC003AA48D /* SecurityQuestionViewController.xib in Resources */,
 				F8DAE61D1A2D5846003151ED /* RegisterEmailView.xib in Resources */,
 				7B2861211A2CA5CD006E7719 /* Images.xcassets in Resources */,
+				F8D383E21A31559800894D7B /* PicBlocker.sqlite in Resources */,
 				7BA308E11A308D920004C60D /* PhotoManagementViewController.xib in Resources */,
 				7B18824E1A30904000296978 /* PopupView.xib in Resources */,
 				7B9E835F1A2DE254003AA48D /* Share_selected_icon@2x.png in Resources */,
@@ -708,15 +778,21 @@
 				F8D17D6B1A2F188A001DA980 /* MKNetworkEngine.m in Sources */,
 				F8D17D661A2F188A001DA980 /* NSDate+RFC1123.m in Sources */,
 				F8D17D711A2F19EB001DA980 /* ANNetworkManager.m in Sources */,
+				F8D383DD1A31559800894D7B /* FMDatabase.m in Sources */,
+				F8D383DC1A31559800894D7B /* DatabaseHelper.m in Sources */,
 				F8D17D671A2F188A001DA980 /* NSDictionary+RequestEncoding.m in Sources */,
 				7B2861191A2CA5CD006E7719 /* AppDelegate.m in Sources */,
 				F8D17D691A2F188A001DA980 /* UIAlertView+MKNetworkKitAdditions.m in Sources */,
 				7B9E83731A2DF1AC003AA48D /* SetupEmailViewController.m in Sources */,
 				F8D17D6A1A2F188A001DA980 /* UIImageView+MKNetworkKitAdditions.m in Sources */,
 				7B9805BB1A2CC0660075B6F6 /* Utils.m in Sources */,
+				F8D383DE1A31559800894D7B /* FMDatabaseAdditions.m in Sources */,
+				F8D383E11A31559800894D7B /* FMResultSet.m in Sources */,
 				7B18824C1A30902400296978 /* PopupView.m in Sources */,
+				F8D383DF1A31559800894D7B /* FMDatabasePool.m in Sources */,
 				F8D17D681A2F188A001DA980 /* NSString+MKNetworkKitAdditions.m in Sources */,
 				7B2861161A2CA5CD006E7719 /* main.m in Sources */,
+				F8D383E01A31559800894D7B /* FMDatabaseQueue.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -845,7 +921,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "91d56f22-1a1c-46fa-b226-5f1d3e40f868";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -860,7 +936,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "91d56f22-1a1c-46fa-b226-5f1d3e40f868";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};

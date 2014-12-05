@@ -1,0 +1,180 @@
+//
+//  DatabaseHelper.m
+//  GOTrainingTest
+//
+//  Created by Nhan Bao on 3/13/14.
+//  Copyright (c) 2014 ARIS VietNam. All rights reserved.
+//
+
+#import "DatabaseHelper.h"
+
+#define kDatabaseName               @"GOTrainingTest_1.1.0_db.sqlite"
+#define kTrainingTableName          @"training"
+
+static DatabaseHelper *_shareDatabase = nil;
+
+@implementation DatabaseHelper
+
++ (DatabaseHelper *)shareDatabase {
+    @synchronized(self) {
+        if (!_shareDatabase) {
+            _shareDatabase = [[DatabaseHelper alloc] init];
+        }
+    }
+    return _shareDatabase;
+}
+
+- (FMDatabase *)database {
+    return database;
+}
+
+- (id)init {
+    self = [super init];
+    if (self) {
+        NSString *path = [self getDatabasePath];
+        NSFileManager *fileManager = [NSFileManager defaultManager];
+        if (![fileManager fileExistsAtPath:path]) {
+            NSString *originPath = [[[NSBundle mainBundle] resourcePath] stringByAppendingPathComponent:kDatabaseName];
+            [fileManager copyItemAtPath:originPath toPath:path error:nil];
+        }
+        database = [[FMDatabase alloc] initWithPath:path];
+    }
+    return self;
+}
+
+- (NSString *)getDatabasePath {
+	NSArray *paths = NSSearchPathForDirectoriesInDomains(NSCachesDirectory , NSUserDomainMask, YES);
+	NSString *cacheDir = [paths objectAtIndex:0];
+	return [cacheDir stringByAppendingPathComponent:kDatabaseName];
+}
+
+- (BOOL)open {
+    BOOL status = YES;
+    if (![database open]) {
+        NSLog(@"CAN'T OPEN DATABASE");
+        status = NO;
+    }
+    return status;
+}
+
+
+- (BOOL)close {
+    BOOL status = YES;
+    if (![database close]) {
+        NSLog(@"CAN'T CLOSE DATABASE");
+        status = NO;
+    }
+    return status;
+}
+
+#pragma mark - TrainingEntity
+
+// get career list
+- (NSMutableArray *)getCareerList {
+    NSString *query = [NSString stringWithFormat:@"SELECT career FROM %@ GROUP BY career ORDER BY id", kTrainingTableName];
+    NSMutableArray *careerList = [[NSMutableArray alloc] init];
+    if([self open]) {
+        FMResultSet *result = [database executeQuery:query];
+        
+        while ([result next]) {
+            NSString *category = [result stringForColumn:@"career"];
+            [careerList addObject:category];
+        }
+        [self close];
+    }
+    return careerList;
+}
+
+// get course list by career
+- (NSMutableArray *)getCourseListByCareer:(NSString *)career {
+    NSString *query = [NSString stringWithFormat:@"SELECT course FROM %@ WHERE career = '%@' GROUP BY course ORDER BY id", kTrainingTableName, career];
+    NSMutableArray *courseList = [[NSMutableArray alloc] init];
+    if([self open]) {
+        FMResultSet *result = [database executeQuery:query];
+        
+        while ([result next]) {
+            NSString *category = [result stringForColumn:@"course"];
+            [courseList addObject:category];
+        }
+        [self close];
+    }
+    return courseList;
+}
+
+// get course list with random
+- (NSMutableArray *)getCourseListWithLimitAndRandomByCareer:(NSString *)career {
+    NSString *query = [NSString stringWithFormat:@"SELECT course FROM %@ WHERE career = '%@' GROUP BY course ORDER BY RANDOM() LIMIT 10", kTrainingTableName, career];
+    NSMutableArray *courseList = [[NSMutableArray alloc] init];
+    if([self open]) {
+        FMResultSet *result = [database executeQuery:query];
+        
+        while ([result next]) {
+            NSString *category = [result stringForColumn:@"course"];
+            [courseList addObject:category];
+        }
+        [self close];
+    }
+    return courseList;
+}
+
+// get training list for query
+- (NSMutableArray *)getTrainingListForQuery:(NSString *)query {
+    NSMutableArray *trainingList = [NSMutableArray array];
+    if([self open]) {
+        FMResultSet *result = [database executeQuery:query];
+        
+        while ([result next]) {
+            TrainingEntity *entity = [TrainingEntity trainingEntityFromDatabase:result];
+            [trainingList addObject:entity];
+        }
+        [self close];
+    }
+    return trainingList;
+}
+
+// get training with random
+- (TrainingEntity *)getRandomTrainingByCareer:(NSString *)career andCourse:(NSString *)course {
+    NSString *query = [NSString stringWithFormat:@"SELECT * FROM %@ WHERE career = '%@' and course = '%@' ORDER BY RANDOM() LIMIT 1", kTrainingTableName, career, course];
+    TrainingEntity *entity;
+    if([self open]) {
+        FMResultSet *result = [database executeQuery:query];
+        
+        if ([result next]) {
+            entity = [TrainingEntity trainingEntityFromDatabase:result];
+        }
+        [self close];
+    }
+    return entity;
+}
+
+// get training list with career
+- (NSMutableArray *)getTrainingListWithCareer:(NSString *)career {
+    
+    NSString *query = [NSString stringWithFormat:@"SELECT * FROM %@ WHERE career = '%@' ORDER BY id", kTrainingTableName, career];
+    
+    return [self getTrainingListForQuery:query];
+}
+
+// get random training list with career
+- (NSMutableArray *)getRandomTrainingListWithCareer:(NSString *)career {
+    
+    NSMutableArray *courseRandomList = [self getCourseListWithLimitAndRandomByCareer:career];
+    NSMutableArray *trainingList = [[NSMutableArray alloc] init];
+    for (int i=0; i<courseRandomList.count; i++) {
+        NSString *course = [courseRandomList objectAtIndex:i];
+        TrainingEntity *entity = [self getRandomTrainingByCareer:career andCourse:course];
+        [trainingList addObject:entity];
+    }
+    
+    return trainingList;
+}
+
+// get training list with career & course
+- (NSMutableArray *)getTrainingListWithCareer:(NSString *)career andCourse:(NSString *)course {
+    
+    NSString *query = [NSString stringWithFormat:@"SELECT * FROM %@ WHERE career = '%@' and course = '%@'", kTrainingTableName, career, course];
+    
+    return [self getTrainingListForQuery:query];
+}
+
+@end

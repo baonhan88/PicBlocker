@@ -1,0 +1,27 @@
+//
+//  DatabaseHelper.h
+//  GOTrainingTest
+//
+//  Created by Nhan Bao on 3/13/14.
+//  Copyright (c) 2014 ARIS VietNam. All rights reserved.
+//
+
+#import <Foundation/Foundation.h>
+#import "FMDatabase.h"
+#import "TrainingEntity.h"
+
+@interface DatabaseHelper : NSObject {
+    FMDatabase  *database;
+}
+
++ (DatabaseHelper *)shareDatabase;
+- (BOOL)open;
+- (BOOL)close;
+
+- (NSMutableArray *)getCareerList;
+- (NSMutableArray *)getCourseListByCareer:(NSString *)career;
+- (NSMutableArray *)getTrainingListWithCareer:(NSString *)career;
+- (NSMutableArray *)getRandomTrainingListWithCareer:(NSString *)career;
+- (NSMutableArray *)getTrainingListWithCareer:(NSString *)career andCourse:(NSString *)course;
+
+@end
