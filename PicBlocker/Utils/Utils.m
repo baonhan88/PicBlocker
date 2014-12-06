@@ -28,6 +28,15 @@
     return NO;
 }
 
++ (void)showAlertWithMessage:(NSString *)message {
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Warning"
+                                                    message:message
+                                                   delegate:nil
+                                          cancelButtonTitle:@"OK"
+                                          otherButtonTitles:nil, nil];
+    [alert show];
+}
+
 #pragma mark - User Defaults
 
 + (BOOL)isFirstTimeLaunchApp {

@@ -11,6 +11,7 @@
 #import "PhotoDetailViewController.h"
 #import "PhotoEntity.h"
 #import "DatabaseHelper.h"
+#import "SettingViewController.h"
 
 #define kReusePhotoCollectionViewCell           @"PhotoCollectionViewCell"
 
@@ -193,8 +194,10 @@
 }
 
 - (void)settingButtonClicked {
-    DLog(@"settingButtonClicked");
     _popupView.hidden = YES;
+    
+    SettingViewController *settingVC = [[SettingViewController alloc] initWithNibName:@"SettingViewController" bundle:nil];
+    [self.navigationController pushViewController:settingVC animated:YES];
 }
 
 #pragma mark - UIImagePickerControllerDelegate

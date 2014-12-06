@@ -29,6 +29,8 @@
 		7B2861241A2CA5CD006E7719 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7B2861221A2CA5CD006E7719 /* LaunchScreen.xib */; };
 		7B2861301A2CA5CD006E7719 /* PicBlockerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B28612F1A2CA5CD006E7719 /* PicBlockerTests.m */; };
 		7B9805BB1A2CC0660075B6F6 /* Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B9805BA1A2CC0660075B6F6 /* Utils.m */; };
+		7B98462A1A33377000FBCDEC /* NumberKeyboardView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B9846291A33377000FBCDEC /* NumberKeyboardView.m */; };
+		7B98462C1A33378300FBCDEC /* NumberKeyboardView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7B98462B1A33378300FBCDEC /* NumberKeyboardView.xib */; };
 		7B9E83421A2DE254003AA48D /* back_arrow@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7B9E831B1A2DE254003AA48D /* back_arrow@2x.png */; };
 		7B9E83431A2DE254003AA48D /* header_cam_icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7B9E831C1A2DE254003AA48D /* header_cam_icon@2x.png */; };
 		7B9E83441A2DE254003AA48D /* header_setting_icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7B9E831D1A2DE254003AA48D /* header_setting_icon@2x.png */; };
@@ -145,6 +147,9 @@
 		7B2861411A2CB61F006E7719 /* PicBlocker-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "PicBlocker-Prefix.pch"; sourceTree = "<group>"; };
 		7B9805B91A2CC0660075B6F6 /* Utils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Utils.h; sourceTree = "<group>"; };
 		7B9805BA1A2CC0660075B6F6 /* Utils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Utils.m; sourceTree = "<group>"; };
+		7B9846281A33377000FBCDEC /* NumberKeyboardView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NumberKeyboardView.h; sourceTree = "<group>"; };
+		7B9846291A33377000FBCDEC /* NumberKeyboardView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NumberKeyboardView.m; sourceTree = "<group>"; };
+		7B98462B1A33378300FBCDEC /* NumberKeyboardView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NumberKeyboardView.xib; sourceTree = "<group>"; };
 		7B9E831B1A2DE254003AA48D /* back_arrow@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "back_arrow@2x.png"; sourceTree = "<group>"; };
 		7B9E831C1A2DE254003AA48D /* header_cam_icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "header_cam_icon@2x.png"; sourceTree = "<group>"; };
 		7B9E831D1A2DE254003AA48D /* header_setting_icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "header_setting_icon@2x.png"; sourceTree = "<group>"; };
@@ -644,6 +649,9 @@
 				7B18825F1A32B3D200296978 /* InputDigitCodeView.h */,
 				7B1882601A32B3D200296978 /* InputDigitCodeView.m */,
 				7B1882621A32B3DE00296978 /* InputDigitCodeView.xib */,
+				7B9846281A33377000FBCDEC /* NumberKeyboardView.h */,
+				7B9846291A33377000FBCDEC /* NumberKeyboardView.m */,
+				7B98462B1A33378300FBCDEC /* NumberKeyboardView.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -760,6 +768,7 @@
 				7B1882691A32C05100296978 /* SettingViewController.xib in Resources */,
 				F8D383C81A31507D00894D7B /* Icon-60@3x.png in Resources */,
 				7B9E83471A2DE254003AA48D /* go_button@2x.png in Resources */,
+				7B98462C1A33378300FBCDEC /* NumberKeyboardView.xib in Resources */,
 				7B9E834D1A2DE254003AA48D /* Yes_button@2x.png in Resources */,
 				7B9E834E1A2DE254003AA48D /* back_space_icon@2x.png in Resources */,
 				F8D383C91A31507D00894D7B /* Icon.png in Resources */,
@@ -817,6 +826,7 @@
 				7BB207BF1A2F49B20076EB41 /* PhotoEntity.m in Sources */,
 				F8D17D6C1A2F188A001DA980 /* MKNetworkOperation.m in Sources */,
 				7BA308E01A308D920004C60D /* PhotoManagementViewController.m in Sources */,
+				7B98462A1A33377000FBCDEC /* NumberKeyboardView.m in Sources */,
 				7B9E836F1A2DF1AC003AA48D /* SecurityQuestionViewController.m in Sources */,
 				7B1882611A32B3D200296978 /* InputDigitCodeView.m in Sources */,
 				7B9E83711A2DF1AC003AA48D /* SetupDigitCodeViewController.m in Sources */,

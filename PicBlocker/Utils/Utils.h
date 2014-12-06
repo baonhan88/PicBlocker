@@ -7,11 +7,13 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
 
 @interface Utils : NSObject
 
 + (BOOL)validateEmail:(NSString *)email;
 + (BOOL)isFullVersion;
++ (void)showAlertWithMessage:(NSString *)message;
 
 + (BOOL)isFirstTimeLaunchApp;
 + (NSString *)getPasscode;

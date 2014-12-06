@@ -8,6 +8,12 @@
 
 #import <UIKit/UIKit.h>
 
-@interface SettingViewController : UIViewController
+typedef enum {
+    kDigitType = 0,
+    kDigitNewType,
+    kDigitRepeatType
+} kDigitCodeType;
+
+@interface SettingViewController : UIViewController <UITextFieldDelegate, UIPickerViewDelegate, UIPickerViewDataSource>
 
 @end

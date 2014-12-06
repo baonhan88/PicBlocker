@@ -20,6 +20,7 @@
 
 
 @property (strong, nonatomic) UIPickerView *questionPicker;
+@property (strong, nonatomic) UIView *questionPickerView;
 
 @property (strong, nonatomic) NSMutableArray *questionList;
 
@@ -52,10 +53,17 @@
     [_questionList addObject:@"What's your University name?"];
     
     _questionPicker = [UIPickerView new];
-    _questionPicker.frame = CGRectMake(0, winSize.height-162, winSize.width, 162);
+    _questionPicker.frame = CGRectMake(0, 0, winSize.width, 162);
     _questionPicker.delegate = self;
     _questionPicker.dataSource = self;
     [_questionPicker reloadComponent:0];
+    
+    _questionPickerView = [[UIView alloc] initWithFrame:CGRectMake(0, winSize.height-162, winSize.width, 162)];
+    [_questionPickerView setBackgroundColor:[UIColor whiteColor]];
+    [self.view addSubview:_questionPickerView];
+    
+    [_questionPickerView addSubview:_questionPicker];
+    _questionPickerView.hidden = YES;
     
     UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapOnView)];
     tap.numberOfTapsRequired = 1;
@@ -88,19 +96,37 @@
 #pragma mark - Common Methods
 
 - (void)showQuestionPickerView {
-    [self.view addSubview:_questionPicker];
+    _questionPickerView.hidden = NO;
 }
 
 - (void)hideQuestionPickerView {
-    [_questionPicker removeFromSuperview];
+    _questionPickerView.hidden = YES;
+}
+
+- (BOOL)isValidAllField {
+    if ([_questionTextField.text isEqualToString:@""]) {
+        [Utils showAlertWithMessage:@"Please choose security question"];
+        
+        return NO;
+    }
+    
+    if ([_answerTextField.text isEqualToString:@""]) {
+        [Utils showAlertWithMessage:@"Please input answer"];
+        
+        return NO;
+    }
+    
+    return YES;
 }
 
 #pragma mark - Events
 
 - (IBAction)goButtonClicked:(id)sender {
-    // go to photo list screen
-    PhotoManagementViewController *photoManagementVC = [[PhotoManagementViewController alloc] initWithNibName:@"PhotoManagementViewController" bundle:nil];
-    [self.navigationController pushViewController:photoManagementVC animated:YES];
+    if ([self isValidAllField]) {
+        // go to photo list screen
+        PhotoManagementViewController *photoManagementVC = [[PhotoManagementViewController alloc] initWithNibName:@"PhotoManagementViewController" bundle:nil];
+        [self.navigationController pushViewController:photoManagementVC animated:YES];
+    }
 }
 
 - (void)rightButtonClicked:(id)sender {

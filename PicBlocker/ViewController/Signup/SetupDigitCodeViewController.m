@@ -185,7 +185,7 @@
                 } else {
                     // re-input digit code
                     UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Warning"
-                                                                        message:@"Digit code not matched, please try again"
+                                                                        message:@"Digit code is not matched, please try again"
                                                                        delegate:self
                                                               cancelButtonTitle:@"OK"
                                                               otherButtonTitles:nil, nil];
