@@ -12,6 +12,7 @@
 @interface PhotoCollectionViewCell : UICollectionViewCell
 
 @property (strong, nonatomic) IBOutlet UIImageView *imageView;
+@property (strong, nonatomic) IBOutlet UIImageView *lockImageView;
 
 @property (strong, nonatomic) PhotoEntity *photoEntity;
 

@@ -18,13 +18,15 @@
     if (_photoEntity.isLock) {
         _imageView.image = [UIImage imageNamed:@"blocked_image"];
         
-        UIImageView *lockImageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"image_lock_icon"]];
-        lockImageView.frame = CGRectMake((self.frame.size.width - 24)/2, (self.frame.size.height-32)/2, 24, 32);
-        [self addSubview:lockImageView];
+        _lockImageView.hidden = NO;
         
         self.userInteractionEnabled = NO;
     } else {
         _imageView.image = [UIImage imageWithContentsOfFile:[Utils pathForImageWithName:_photoEntity.name]];
+        
+        _lockImageView.hidden = YES;
+        
+        self.userInteractionEnabled = YES;
     }
     
 }

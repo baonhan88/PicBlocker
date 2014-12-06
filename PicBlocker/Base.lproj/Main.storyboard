@@ -62,11 +62,6 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="QdI-Ms-vci">
-                                <rect key="frame" x="83" y="225" width="155" height="30"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" keyboardType="numbersAndPunctuation"/>
-                            </textField>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" image="screen_icon.png" translatesAutoresizingMaskIntoConstraints="NO" id="OBP-6z-7pS">
                                 <rect key="frame" x="98" y="13" width="125" height="141"/>
                             </imageView>
@@ -84,23 +79,87 @@
                                 <rect key="frame" x="130" y="277" width="60" height="1"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
+                            <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="biQ-oa-qHQ">
+                                <rect key="frame" x="90" y="212" width="140" height="35"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xlL-YJ-GhI">
+                                        <rect key="frame" x="0.0" y="0.0" width="35" height="35"/>
+                                        <subviews>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" image="dot_white.png" translatesAutoresizingMaskIntoConstraints="NO" id="Sfq-LK-5Bf">
+                                                <rect key="frame" x="9" y="9" width="17" height="17"/>
+                                            </imageView>
+                                        </subviews>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="centerX" secondItem="Sfq-LK-5Bf" secondAttribute="centerX" id="3mX-N9-FL8"/>
+                                            <constraint firstAttribute="centerY" secondItem="Sfq-LK-5Bf" secondAttribute="centerY" id="CeY-a5-kwM"/>
+                                        </constraints>
+                                    </view>
+                                    <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="BSM-lk-grx">
+                                        <rect key="frame" x="70" y="0.0" width="35" height="35"/>
+                                        <subviews>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" image="dot_white.png" translatesAutoresizingMaskIntoConstraints="NO" id="2yg-rS-a6R">
+                                                <rect key="frame" x="9" y="9" width="17" height="17"/>
+                                            </imageView>
+                                        </subviews>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="centerX" secondItem="2yg-rS-a6R" secondAttribute="centerX" id="1Uj-xh-gPb"/>
+                                            <constraint firstAttribute="centerY" secondItem="2yg-rS-a6R" secondAttribute="centerY" id="GYw-8d-rA2"/>
+                                        </constraints>
+                                    </view>
+                                    <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hpA-ev-GDs">
+                                        <rect key="frame" x="105" y="0.0" width="35" height="35"/>
+                                        <subviews>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" image="dot_white.png" translatesAutoresizingMaskIntoConstraints="NO" id="gVB-9w-0g9">
+                                                <rect key="frame" x="9" y="9" width="17" height="17"/>
+                                            </imageView>
+                                        </subviews>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="centerY" secondItem="gVB-9w-0g9" secondAttribute="centerY" id="2AL-fR-ZnK"/>
+                                            <constraint firstAttribute="centerX" secondItem="gVB-9w-0g9" secondAttribute="centerX" id="hUq-9g-Ojp"/>
+                                        </constraints>
+                                    </view>
+                                    <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="rk5-qB-i9b">
+                                        <rect key="frame" x="35" y="0.0" width="35" height="35"/>
+                                        <subviews>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" image="dot_white.png" translatesAutoresizingMaskIntoConstraints="NO" id="Q3Q-O0-WaP">
+                                                <rect key="frame" x="9" y="9" width="17" height="17"/>
+                                            </imageView>
+                                        </subviews>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="centerY" secondItem="Q3Q-O0-WaP" secondAttribute="centerY" id="SS8-ph-JCK"/>
+                                            <constraint firstAttribute="centerX" secondItem="Q3Q-O0-WaP" secondAttribute="centerX" id="uPW-SX-7lg"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" red="0.16862745098039217" green="0.42352941176470588" blue="0.27843137254901962" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstAttribute="centerX" secondItem="QdI-Ms-vci" secondAttribute="centerX" id="0yb-De-3wp"/>
                             <constraint firstAttribute="centerX" secondItem="Y3C-7k-YE3" secondAttribute="centerX" id="57K-ny-Hqm"/>
                             <constraint firstAttribute="centerX" secondItem="ZMU-Cs-Asg" secondAttribute="centerX" id="8si-h2-tsZ"/>
-                            <constraint firstItem="QdI-Ms-vci" firstAttribute="top" secondItem="ZMU-Cs-Asg" secondAttribute="bottom" constant="8" id="TOH-DP-LCP"/>
+                            <constraint firstItem="biQ-oa-qHQ" firstAttribute="top" secondItem="ZMU-Cs-Asg" secondAttribute="bottom" constant="4" id="E3D-m0-2QQ"/>
+                            <constraint firstAttribute="centerX" secondItem="biQ-oa-qHQ" secondAttribute="centerX" id="EDm-hC-Wjs"/>
                             <constraint firstAttribute="centerX" secondItem="OBP-6z-7pS" secondAttribute="centerX" id="baf-0R-rKs"/>
                             <constraint firstAttribute="centerX" secondItem="xUF-4d-E13" secondAttribute="centerX" id="gh9-E4-ehk"/>
                             <constraint firstItem="ZMU-Cs-Asg" firstAttribute="top" secondItem="OBP-6z-7pS" secondAttribute="bottom" constant="8" id="qan-DP-kWP"/>
-                            <constraint firstItem="Y3C-7k-YE3" firstAttribute="top" secondItem="QdI-Ms-vci" secondAttribute="bottom" constant="8" id="wu7-4b-dah"/>
                         </constraints>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
                     <connections>
                         <outlet property="descriptionLabel" destination="ZMU-Cs-Asg" id="STO-XE-UZd"/>
-                        <outlet property="digitCodeTextField" destination="QdI-Ms-vci" id="4di-j7-Vi3"/>
+                        <outlet property="digitBorder1View" destination="xlL-YJ-GhI" id="eg1-aO-cG7"/>
+                        <outlet property="digitBorder2View" destination="rk5-qB-i9b" id="Jm4-p7-NCl"/>
+                        <outlet property="digitBorder3View" destination="BSM-lk-grx" id="Xyl-l8-a3b"/>
+                        <outlet property="digitBorder4View" destination="hpA-ev-GDs" id="9mn-Sr-BTp"/>
+                        <outlet property="dotImage1View" destination="Sfq-LK-5Bf" id="M88-En-6Oi"/>
+                        <outlet property="dotImage2View" destination="Q3Q-O0-WaP" id="FDo-Oh-J31"/>
+                        <outlet property="dotImage3View" destination="2yg-rS-a6R" id="3lI-yY-2Lm"/>
+                        <outlet property="dotImage4View" destination="gVB-9w-0g9" id="Fe4-j6-CDu"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7q4-s3-1xv" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -182,6 +241,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="dot_white.png" width="16" height="16"/>
         <image name="email_box.png" width="291" height="43"/>
         <image name="go_button.png" width="291" height="43"/>
         <image name="screen_icon.png" width="125" height="141"/>

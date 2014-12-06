@@ -16,11 +16,18 @@
 
 @property (strong, nonatomic) IBOutlet UILabel *descriptionLabel;
 
-@property (strong, nonatomic) IBOutlet UITextField *digitCodeTextField;
+@property (strong, nonatomic) IBOutlet UIView *digitBorder1View;
+@property (strong, nonatomic) IBOutlet UIView *digitBorder2View;
+@property (strong, nonatomic) IBOutlet UIView *digitBorder3View;
+@property (strong, nonatomic) IBOutlet UIView *digitBorder4View;
 
+@property (strong, nonatomic) IBOutlet UIImageView *dotImage1View;
+@property (strong, nonatomic) IBOutlet UIImageView *dotImage2View;
+@property (strong, nonatomic) IBOutlet UIImageView *dotImage3View;
+@property (strong, nonatomic) IBOutlet UIImageView *dotImage4View;
 
 @property (strong, nonatomic) NSString *digitCodeString;
-
+@property (strong, nonatomic) NSString *oldDigitCodeStringSaved;
 
 @end
 
@@ -30,7 +37,26 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     
-    _digitCodeTextField.delegate = self;
+    _digitCodeString = @"";
+    _oldDigitCodeStringSaved = @"";
+    
+    // init input digit code view
+    _digitBorder1View.layer.borderColor = [UIColor colorWithRed:1.0 green:1.0 blue:1.0 alpha:0.6].CGColor;
+    _digitBorder1View.layer.borderWidth = 1;
+    
+    _digitBorder2View.layer.borderColor = [UIColor colorWithRed:1.0 green:1.0 blue:1.0 alpha:0.6].CGColor;
+    _digitBorder2View.layer.borderWidth = 1;
+    
+    _digitBorder3View.layer.borderColor = [UIColor colorWithRed:1.0 green:1.0 blue:1.0 alpha:0.6].CGColor;
+    _digitBorder3View.layer.borderWidth = 1;
+    
+    _digitBorder4View.layer.borderColor = [UIColor colorWithRed:1.0 green:1.0 blue:1.0 alpha:0.6].CGColor;
+    _digitBorder4View.layer.borderWidth = 1;
+    
+    _dotImage1View.hidden = YES;
+    _dotImage2View.hidden = YES;
+    _dotImage3View.hidden = YES;
+    _dotImage4View.hidden = YES;
     
     // init the number keyboard
     [self initKeyboard];
@@ -98,6 +124,35 @@
     }
 }
 
+- (void)updateDigitDot {
+    if (_digitCodeString.length == 0) {
+        _dotImage1View.hidden = YES;
+        _dotImage2View.hidden = YES;
+        _dotImage3View.hidden = YES;
+        _dotImage4View.hidden = YES;
+    } else if (_digitCodeString.length == 1) {
+        _dotImage1View.hidden = NO;
+        _dotImage2View.hidden = YES;
+        _dotImage3View.hidden = YES;
+        _dotImage4View.hidden = YES;
+    } else if (_digitCodeString.length == 2) {
+        _dotImage1View.hidden = NO;
+        _dotImage2View.hidden = NO;
+        _dotImage3View.hidden = YES;
+        _dotImage4View.hidden = YES;
+    } else if (_digitCodeString.length == 3) {
+        _dotImage1View.hidden = NO;
+        _dotImage2View.hidden = NO;
+        _dotImage3View.hidden = NO;
+        _dotImage4View.hidden = YES;
+    } else if (_digitCodeString.length >= 4) {
+        _dotImage1View.hidden = NO;
+        _dotImage2View.hidden = NO;
+        _dotImage3View.hidden = NO;
+        _dotImage4View.hidden = NO;
+    }
+}
+
 - (void)checkDigitCode {
     // nhap du 4 ky tu -> bat dau check
     // neu chua setup digit
@@ -107,14 +162,19 @@
     // nguoc lai show alert error, reset digit nhap lai lan 2
     // nguoc lai cho qua man hinh list Photo
     
-    if (_digitCodeTextField.text.length >= 4) {
+    [self updateDigitDot];
+    
+    if (_digitCodeString.length >= 4) {
         if (![Utils getPasscode]) {
-            if (!_digitCodeString) {
-                _digitCodeString = _digitCodeTextField.text;
-                _digitCodeTextField.text = @"";
+            if ([_oldDigitCodeStringSaved isEqualToString:@""]) {
+                _oldDigitCodeStringSaved = _digitCodeString;
+                
+                _digitCodeString = @"";
+                [self updateDigitDot];
+                
                 _descriptionLabel.text = @"Please re-enter or setup your four digit code";
             } else {
-                if ([_digitCodeTextField.text isEqualToString:_digitCodeString]) {
+                if ([_digitCodeString isEqualToString:_oldDigitCodeStringSaved]) {
                     DLog(@"digit done");
                     // setup four digit code
                     [Utils setPasscodeWithCode:_digitCodeString];
@@ -123,6 +183,7 @@
                     SecurityQuestionViewController *securityQuestionVC = [[SecurityQuestionViewController alloc] initWithNibName:@"SecurityQuestionViewController" bundle:nil];
                     [self.navigationController pushViewController:securityQuestionVC animated:YES];
                 } else {
+                    // re-input digit code
                     UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Warning"
                                                                         message:@"Digit code not matched, please try again"
                                                                        delegate:self
@@ -130,15 +191,29 @@
                                                               otherButtonTitles:nil, nil];
                     [alertView show];
                     
-                    _digitCodeTextField.text = @"";
+                    _digitCodeString = @"";
+                    [self updateDigitDot];
                 }
                 
             }
             
         } else {
-            // go to photo list screen
-            PhotoManagementViewController *photoManagementVC = [[PhotoManagementViewController alloc] initWithNibName:@"PhotoManagementViewController" bundle:nil];
-            [self.navigationController pushViewController:photoManagementVC animated:YES];
+            if ([_digitCodeString isEqualToString:[Utils getPasscode]]) {
+                // go to photo list screen
+                PhotoManagementViewController *photoManagementVC = [[PhotoManagementViewController alloc] initWithNibName:@"PhotoManagementViewController" bundle:nil];
+                [self.navigationController pushViewController:photoManagementVC animated:YES];
+            } else {
+                // re-input digit code
+                UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Warning"
+                                                                    message:@"Digit code not matched, please try again"
+                                                                   delegate:self
+                                                          cancelButtonTitle:@"OK"
+                                                          otherButtonTitles:nil, nil];
+                [alertView show];
+                
+                _digitCodeString = @"";
+                [self updateDigitDot];
+            }
         }
         
     }
@@ -150,13 +225,13 @@
     DLog(@"clicked on button with tag = %ld", sender.tag);
     if (sender.tag == kBackspaceButtonTag) {
         // process backspace
-        if ([_digitCodeTextField.text length] > 0) {
-            _digitCodeTextField.text = [_digitCodeTextField.text substringToIndex:[_digitCodeTextField.text length] - 1];
+        if ([_digitCodeString length] > 0) {
+            _digitCodeString = [_digitCodeString substringToIndex:[_digitCodeString length] - 1];
             [self checkDigitCode];
-        } 
+        }
     } else {
         // process click number button
-        _digitCodeTextField.text = [NSString stringWithFormat:@"%@%ld", _digitCodeTextField.text, sender.tag];
+        _digitCodeString = [NSString stringWithFormat:@"%@%ld", _digitCodeString, sender.tag];
         [self checkDigitCode];
     }
 }

@@ -11,6 +11,11 @@
 
 @interface PhotoDetailViewController ()
 
+@property (strong, nonatomic) IBOutlet UIButton *shareButton;
+@property (strong, nonatomic) IBOutlet UIButton *deleteButton;
+@property (strong, nonatomic) IBOutlet UIButton *enlargeButton;
+@property (strong, nonatomic) IBOutlet UIButton *lockButton;
+
 @property (strong, nonatomic) PopupView *popupView;
 
 @end
@@ -81,18 +86,29 @@
     }
 }
 
-#pragma mark - Events
-
-- (void)cameraButtonClicked:(id)sender {
-    DLog(@"cameraButtonClicked");
+- (void)disableAllButton {
+    _shareButton.enabled = NO;
+    _deleteButton.enabled = NO;
+    _enlargeButton.enabled = NO;
+    _lockButton.enabled = NO;
+    
+    for (UIBarButtonItem *item in self.navigationItem.rightBarButtonItems) {
+        item.enabled = NO;
+    }
 }
 
-- (void)importSettingButtonClicked:(id)sender {
-    DLog(@"importSettingButtonClicked");
-    _popupView.hidden = !_popupView.hidden;
+- (void)enableAllButton {
+    _shareButton.enabled = YES;
+    _deleteButton.enabled = YES;
+    _enlargeButton.enabled = YES;
+    _lockButton.enabled = YES;
+    
+    for (UIBarButtonItem *item in self.navigationItem.rightBarButtonItems) {
+        item.enabled = YES;
+    }
 }
 
-- (IBAction)deleteButtonClicked:(id)sender {
+- (void)processDeletePhoto {
     // delete image in document folder
     NSFileManager *fileManager = [NSFileManager defaultManager];
     NSError *error;
@@ -106,6 +122,22 @@
     [[DatabaseHelper shareDatabase] deletePhotoWithEntity:_photoEntity];
     
     [self.navigationController popViewControllerAnimated:YES];
+}
+
+#pragma mark - Events
+
+- (void)cameraButtonClicked:(id)sender {
+    DLog(@"cameraButtonClicked");
+}
+
+- (void)importSettingButtonClicked:(id)sender {
+    DLog(@"importSettingButtonClicked");
+    _popupView.hidden = !_popupView.hidden;
+}
+
+- (IBAction)deleteButtonClicked:(id)sender {
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Warning" message:@"Do you want to delete this photo?" delegate:self cancelButtonTitle:@"NO" otherButtonTitles:@"YES", nil];
+    [alert show];
 }
 
 - (IBAction)enlargeButtonClicked:(id)sender {
@@ -131,10 +163,13 @@
 }
 
 - (IBAction)lockButtonClicked:(id)sender {
-    // show input passcode popup
+    [self disableAllButton];
     
-    // process lock image
-    [self processLockImage];
+    // show input passcode popup
+    InputDigitCodeView *inputDigitCodeView = [[[NSBundle mainBundle] loadNibNamed:@"InputDigitCodeView" owner:self options:nil] objectAtIndex:0];
+    inputDigitCodeView.delegate = self;
+    inputDigitCodeView.center = self.view.center;
+    [self.view addSubview:inputDigitCodeView];
 }
 
 #pragma mark - PopupViewDelegate
@@ -152,6 +187,25 @@
 - (void)settingButtonClicked {
     DLog(@"settingButtonClicked");
     _popupView.hidden = YES;
+}
+
+#pragma mark - InputDigitCodeDelegate
+
+- (void)processInputDigitDone {
+    // process lock image
+    [self processLockImage];
+}
+
+- (void)digitCodeViewClosed {
+    [self enableAllButton];
+}
+
+#pragma mark - UIAlertViewDelegate 
+
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
+    if (buttonIndex != [alertView cancelButtonIndex]) {
+        [self processDeletePhoto];
+    }
 }
 
 @end

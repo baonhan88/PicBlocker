@@ -7,6 +7,10 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PhotoDetailViewController">
             <connections>
+                <outlet property="deleteButton" destination="QSt-bV-KeN" id="LGY-OW-HZ0"/>
+                <outlet property="enlargeButton" destination="Jlf-If-6Xc" id="ZaF-Fp-OUV"/>
+                <outlet property="lockButton" destination="Kzr-AM-evO" id="teP-7T-dfo"/>
+                <outlet property="shareButton" destination="BvA-Zt-fyp" id="qXz-Yy-yLT"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>

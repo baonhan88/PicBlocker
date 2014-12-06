@@ -44,10 +44,12 @@
     
     // init question list
     _questionList = [[NSMutableArray alloc] init];
-    [_questionList addObject:@"aaa"];
-    [_questionList addObject:@"bbb"];
-    [_questionList addObject:@"ccc"];
-    [_questionList addObject:@"ddd"];
+    [_questionList addObject:@"What's your name?"];
+    [_questionList addObject:@"What's the first pet name?"];
+    [_questionList addObject:@"How old are you?"];
+    [_questionList addObject:@"Where are you from?"];
+    [_questionList addObject:@"What's your best friend name?"];
+    [_questionList addObject:@"What's your University name?"];
     
     _questionPicker = [UIPickerView new];
     _questionPicker.frame = CGRectMake(0, winSize.height-162, winSize.width, 162);

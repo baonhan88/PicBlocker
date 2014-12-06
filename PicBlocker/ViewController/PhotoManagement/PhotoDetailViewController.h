@@ -9,8 +9,9 @@
 #import <UIKit/UIKit.h>
 #import "PopupView.h"
 #import "PhotoEntity.h"
+#import "InputDigitCodeView.h"
 
-@interface PhotoDetailViewController : UIViewController <PopupDelegate>
+@interface PhotoDetailViewController : UIViewController <PopupDelegate, InputDigitCodeDelegate, UIAlertViewDelegate>
 
 @property (strong, nonatomic) UIImageView *imageView;
 @property (strong, nonatomic) PhotoEntity *photoEntity;
